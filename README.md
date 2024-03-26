@@ -16,7 +16,7 @@ We incorporate the most popular and powerful tools into the project, such as Ret
 Our template is the perfect solution for those looking to save time on initial project setup and focus on creating a high-quality Android application. Start using our template now and accelerate your development process!
 
 
-### Technologies used in the project
+## Technologies used in the project
 
 - **Clean Architecture**: We utilize the power of Clean Architecture to ensure clear separation of concerns and ease of maintenance and scalability of the codebase.
 
