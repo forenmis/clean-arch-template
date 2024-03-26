@@ -2,13 +2,13 @@
 
 Welcome to our Android project template, designed for instant kick-start of your next application! Our template provides everything you need for swift and efficient project creation on the Android platform.
 
-##Included features
+## Included features
 
-###Simple setup: We offer a straightforward and intuitive setup process, enabling you to get started on your project quickly without unnecessary complexities.
+### Simple setup: We offer a straightforward and intuitive setup process, enabling you to get started on your project quickly without unnecessary complexities.
 
-###Ready-made architecture: Our template comes pre-configured with modern architectural approaches such as MVI, MVVM, Clean Architecture, allowing you to dive into development without the need to build the architecture from scratch.
+### Ready-made architecture: Our template comes pre-configured with modern architectural approaches such as MVI, MVVM, Clean Architecture, allowing you to dive into development without the need to build the architecture from scratch.
 
-###Integration of tools: We incorporate the most popular and powerful tools into the project, such as Retrofit for networking, so you can focus on developing your application's functionality rather than integrating tools.
+### Integration of tools: We incorporate the most popular and powerful tools into the project, such as Retrofit for networking, so you can focus on developing your application's functionality rather than integrating tools.
 
 Our template is the perfect solution for those looking to save time on initial project setup and focus on creating a high-quality Android application. Start using our template now and accelerate your development process!
 
