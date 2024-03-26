@@ -25,7 +25,7 @@ Our template is the perfect solution for those looking to save time on initial p
 
 - **Clean Architecture**: We utilize the power of Clean Architecture to ensure clear separation of concerns and ease of maintenance and scalability of the codebase.
 
-- **MVVM + MVI**: To achieve clarity and flexibility in design, we combine the principles of MVVM and MVI patterns, providing efficient state management and user interaction.
+- **MVI**: To achieve clarity and flexibility in design, we combine the principles of MVVM and MVI patterns, providing efficient state management and user interaction.
 
 - **Hilt**: We employ Hilt, a powerful dependency injection tool from Google, to ensure ease of dependency management and inversion of control in our project.
 
