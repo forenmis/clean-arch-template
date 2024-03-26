@@ -1,5 +1,7 @@
 # Clean Architecture template
 
+![android](https://github.com/forenmis/clean-arch-template/assets/126270280/0846a1b9-9cac-4b34-af2e-ada973a9b701)
+
 Welcome to our Android project template, designed for instant kick-start of your next application! Our template provides everything you need for swift and efficient project creation on the Android platform.
 
 ## Included features
@@ -17,6 +19,9 @@ Our template is the perfect solution for those looking to save time on initial p
 
 
 ## Tech stack
+
+![clean](https://github.com/forenmis/clean-arch-template/assets/126270280/abb0e0ab-a8d2-4592-ba16-c494a2c822c4)
+
 
 - **Clean Architecture**: We utilize the power of Clean Architecture to ensure clear separation of concerns and ease of maintenance and scalability of the codebase.
 
