@@ -13,7 +13,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "CleanArchitectireTemplate"
+rootProject.name = "CleanArchitectureTemplate"
 include(":app")
 include(":data")
 include(":domain")

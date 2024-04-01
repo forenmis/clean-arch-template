@@ -10,6 +10,8 @@ import Constants.VERSION_NAME
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.kotlinAndroid)
+    alias(libs.plugins.kapt)
+    alias(libs.plugins.hilt)
 }
 
 android {
@@ -17,7 +19,7 @@ android {
     compileSdk = COMPILE_SDK
 
     defaultConfig {
-        applicationId = "com.example.cleanarchitectiretemplate"
+        applicationId = "com.example.cleanarchitecturetemplate"
         minSdk = MIN_SDK
         targetSdk = TARGET_SDK
         versionCode = VERSION_CODE
@@ -37,6 +39,10 @@ android {
         sourceCompatibility = SOURCE_COMPATIBILITY
         targetCompatibility = TARGET_COMPATIBILITY
     }
+
+    kapt {
+        correctErrorTypes = true
+    }
     kotlinOptions {
         jvmTarget = JVM_TARGET
     }
@@ -47,4 +53,7 @@ dependencies {
     implementation(libs.core.ktx)
     implementation(libs.appcompat)
     implementation(libs.material)
+
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
 }
