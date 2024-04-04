@@ -22,6 +22,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.presentation.core.BottomRoute
+import com.example.presentation.core.Palette
 import com.example.presentation.screens.blue.BlueScreen
 import com.example.presentation.screens.pink.PinkScreen
 import com.example.presentation.screens.vilolet.VioletScreen
@@ -44,13 +45,13 @@ private fun ScreenContent() {
     val bottomBarNavController = rememberNavController()
     val screenRoutes = BottomRoute.all()
     Scaffold(bottomBar = {
-        NavigationBar {
+        NavigationBar(containerColor = Palette.Yellow) {
             val navBackStackEntry by bottomBarNavController.currentBackStackEntryAsState()
             val currentDestination = navBackStackEntry?.destination
             screenRoutes.forEach { screen ->
                 NavigationBarItem(
-                    icon = { Icon(Icons.Filled.Favorite, contentDescription = null) },
-                    label = { Text(screen.route) },
+                    icon = { Icon(Icons.Filled.Favorite, contentDescription = null, tint = Palette.Peach) },
+                    label = { Text(text = screen.route, color = Palette.Peach) },
                     selected = currentDestination?.hierarchy?.any { it.route == screen.route } == true,
                     onClick = {
                         bottomBarNavController.navigate(screen.route) {
