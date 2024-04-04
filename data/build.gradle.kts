@@ -7,7 +7,7 @@ import Constants.TARGET_COMPATIBILITY
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.kotlinAndroid)
-    alias(libs.plugins.kapt)
+    alias(libs.plugins.ksp)
     alias(libs.plugins.hilt)
 }
 
@@ -22,10 +22,6 @@ android {
     compileOptions {
         sourceCompatibility = SOURCE_COMPATIBILITY
         targetCompatibility = TARGET_COMPATIBILITY
-    }
-
-    kapt {
-        correctErrorTypes = true
     }
 
     kotlinOptions {
@@ -43,5 +39,5 @@ dependencies {
     implementation(libs.converter.gson)
 
     implementation(libs.hilt.android)
-    kapt(libs.hilt.compiler)
+    ksp(libs.hilt.compiler)
 }

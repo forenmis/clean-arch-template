@@ -8,7 +8,7 @@ import Constants.TARGET_COMPATIBILITY
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.kotlinAndroid)
-    alias(libs.plugins.kapt)
+    alias(libs.plugins.ksp)
     alias(libs.plugins.hilt)
 }
 
@@ -22,10 +22,6 @@ android {
 
     composeOptions {
         kotlinCompilerExtensionVersion = KOTLIN_COMPILER_EXTENSION_VERSION
-    }
-
-    kapt {
-        correctErrorTypes = true
     }
 
     defaultConfig {
@@ -52,13 +48,13 @@ dependencies {
 
     implementation(platform(libs.compose.bom))
     implementation(libs.compose.material3)
-    implementation(libs.tooling.preview)
     debugImplementation(libs.ui.tooling)
+    implementation(libs.tooling.preview)
     implementation(libs.material.icons.extended)
     implementation(libs.activity.compose)
     implementation(libs.lifecycle.viewmodel.compose)
     implementation(libs.navigation.compose)
 
     implementation(libs.hilt.android)
-    kapt(libs.hilt.compiler)
+    ksp(libs.hilt.compiler)
 }
