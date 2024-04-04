@@ -12,6 +12,7 @@ okhttp-bom = "4.12.0"
 gson = "2.10.1"
 retrofit = "2.9.0"
 hilt = "2.51.1"
+hilt-navigation-compose = "1.2.0"
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
@@ -34,6 +35,7 @@ retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = 
 converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
+hilt-navigation-compose = {group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hilt-navigation-compose"}
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
