@@ -5,6 +5,4 @@ import com.example.data.entity.CatResponse
 interface CatRepository {
 
     suspend fun getList(): List<CatResponse>
-
-    suspend fun getRandomItem(): CatResponse
 }

@@ -12,7 +12,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.presentation.R
-import com.example.presentation.core.Palette
+import com.example.presentation.utils.Palette
 
 @Composable
 fun GreenScreen(viewModel: GreenViewModel) {

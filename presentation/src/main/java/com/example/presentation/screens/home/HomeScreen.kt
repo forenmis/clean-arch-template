@@ -10,7 +10,6 @@ import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
@@ -21,20 +20,15 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.example.presentation.core.BottomRoute
-import com.example.presentation.core.Palette
+import com.example.presentation.utils.BottomRoute
+import com.example.presentation.utils.Palette
 import com.example.presentation.screens.blue.BlueScreen
 import com.example.presentation.screens.pink.PinkScreen
 import com.example.presentation.screens.vilolet.VioletScreen
 import com.example.presentation.screens.yellow.GreenScreen
 
 @Composable
-fun HomeScreen(
-    viewModel: HomeViewModel
-) {
-    LaunchedEffect(Unit) {
-        viewModel.load()
-    }
+fun HomeScreen(viewModel: HomeViewModel) {
     MaterialTheme {
         ScreenContent()
     }
@@ -82,7 +76,5 @@ private fun ScreenContent() {
 @Preview(showBackground = true)
 @Composable
 fun ScreenPreview() {
-    ScreenContent(
-
-    )
+    ScreenContent()
 }

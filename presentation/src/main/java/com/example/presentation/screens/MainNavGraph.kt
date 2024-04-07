@@ -5,7 +5,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.example.presentation.core.Routes
+import com.example.presentation.utils.Routes
 import com.example.presentation.screens.home.HomeScreen
 
 @Composable

@@ -48,6 +48,8 @@ dependencies {
 
     implementation(platform(libs.compose.bom))
     implementation(libs.compose.material3)
+    implementation(libs.lottie)
+    implementation(libs.lottie.compose)
     debugImplementation(libs.ui.tooling)
     implementation(libs.tooling.preview)
     implementation(libs.material.icons.extended)
@@ -55,6 +57,8 @@ dependencies {
     implementation(libs.lifecycle.viewmodel.compose)
     implementation(libs.navigation.compose)
     implementation(libs.hilt.navigation.compose)
+    implementation(libs.lifecycle.runtime.compose)
+    implementation(libs.coil.compose)
 
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
