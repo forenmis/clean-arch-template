@@ -15,6 +15,19 @@ android {
     namespace = "com.example.data"
     compileSdk = COMPILE_SDK
 
+    buildFeatures {
+        buildConfig = true
+    }
+
+    buildTypes {
+        debug {
+            buildConfigField("String", "BASE_URL", "\"https://api.thecatapi.com/\"")
+        }
+        release {
+            buildConfigField("String", "BASE_URL", "\"https://api.thecatapi.com/\"")
+        }
+    }
+
     defaultConfig {
         minSdk = MIN_SDK
     }

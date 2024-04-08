@@ -1,5 +1,6 @@
 package com.example.data.di
 
+import com.example.data.BuildConfig
 import com.example.data.api.CatService
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
@@ -25,13 +26,17 @@ internal object ApiServiceModule {
 
     @Provides
     fun provideLoggingInterceptor(): Interceptor {
-        return HttpLoggingInterceptor().apply { setLevel(HttpLoggingInterceptor.Level.BODY) }
+        return HttpLoggingInterceptor().apply {
+            setLevel(HttpLoggingInterceptor.Level.BODY)
+        }
     }
 
     @Provides
     fun provideOkhttpClient(interceptor: Interceptor): OkHttpClient {
         return OkHttpClient.Builder()
-            .addInterceptor(interceptor)
+            .apply {
+                if (BuildConfig.DEBUG) addInterceptor(interceptor)
+            }
             .build()
 
     }
@@ -39,7 +44,7 @@ internal object ApiServiceModule {
     @Provides
     fun provideRetrofit(client: OkHttpClient, gson: Gson): Retrofit {
         return Retrofit.Builder()
-            .baseUrl("https://api.thecatapi.com/")
+            .baseUrl(BuildConfig.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create(gson))
             .client(client)
             .build()
