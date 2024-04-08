@@ -17,6 +17,7 @@ import com.airbnb.lottie.compose.rememberLottieComposition
 import com.example.presentation.R
 import com.example.presentation.utils.Palette
 
+@SuppressWarnings("UnusedParameter")
 @Composable
 fun BlueScreen(viewModel: BlueViewModel) {
 

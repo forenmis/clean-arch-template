@@ -91,7 +91,7 @@ private fun ListItem(image: String) {
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
-fun ScreenPreview() {
+private fun ScreenPreview() {
     MaterialTheme {
         ScreenContent(
             state = PinkContracts.State(),

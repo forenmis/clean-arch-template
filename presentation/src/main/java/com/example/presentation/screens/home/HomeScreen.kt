@@ -27,6 +27,7 @@ import com.example.presentation.screens.pink.PinkScreen
 import com.example.presentation.screens.vilolet.VioletScreen
 import com.example.presentation.screens.yellow.GreenScreen
 
+@SuppressWarnings("UnusedParameter")
 @Composable
 fun HomeScreen(viewModel: HomeViewModel) {
     MaterialTheme {
@@ -75,6 +76,6 @@ private fun ScreenContent() {
 
 @Preview(showBackground = true)
 @Composable
-fun ScreenPreview() {
+private fun ScreenPreview() {
     ScreenContent()
 }

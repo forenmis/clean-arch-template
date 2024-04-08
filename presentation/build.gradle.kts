@@ -42,7 +42,7 @@ android {
 
 dependencies {
     implementation(project(":domain"))
-    
+
     implementation(libs.core.ktx)
     implementation(libs.appcompat)
     implementation(libs.material)
@@ -65,4 +65,9 @@ dependencies {
     ksp(libs.hilt.compiler)
 
     detektPlugins(libs.detekt.compose.rules)
+}
+
+detekt {
+    allRules = false // activate all available (even unstable) rules.
+    config.setFrom(files(file("detekt.yml")))
 }

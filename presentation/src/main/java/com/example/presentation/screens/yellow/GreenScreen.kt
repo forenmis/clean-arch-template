@@ -14,6 +14,7 @@ import androidx.compose.ui.unit.dp
 import com.example.presentation.R
 import com.example.presentation.utils.Palette
 
+@SuppressWarnings("UnusedParameter")
 @Composable
 fun GreenScreen(viewModel: GreenViewModel) {
     ScreenContent()
@@ -33,7 +34,7 @@ private fun ScreenContent() {
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
-fun ScreenPreview() {
+private fun ScreenPreview() {
     MaterialTheme {
         ScreenContent()
     }
