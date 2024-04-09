@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.lazy.LazyColumn
@@ -95,6 +96,7 @@ private fun ListItem(image: String, isFavorite: Boolean = false) {
         )
         Icon(
             modifier = Modifier
+                .padding(16.dp)
                 .align(Alignment.TopEnd)
                 .size(24.dp),
             painter = painterResource(

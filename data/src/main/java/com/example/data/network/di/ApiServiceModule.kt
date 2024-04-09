@@ -1,7 +1,7 @@
-package com.example.data.di
+package com.example.data.network.di
 
 import com.example.data.BuildConfig
-import com.example.data.api.CatService
+import com.example.data.network.api.CatService
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import dagger.Module

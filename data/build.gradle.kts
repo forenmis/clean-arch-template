@@ -22,9 +22,13 @@ android {
     buildTypes {
         debug {
             buildConfigField("String", "BASE_URL", "\"https://api.thecatapi.com/\"")
+            buildConfigField("String", "DATABASE_NAME", "\"Cats\"")
+            buildConfigField("int", "DATABASE_VERSION", "1")
         }
         release {
             buildConfigField("String", "BASE_URL", "\"https://api.thecatapi.com/\"")
+            buildConfigField("String", "DATABASE_NAME", "\"Cats\"")
+            buildConfigField("int", "DATABASE_VERSION", "1")
         }
     }
 

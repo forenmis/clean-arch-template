@@ -1,7 +1,8 @@
 package com.example.data.repository.cat
 
-import com.example.data.api.CatService
-import com.example.data.entity.CatResponse
+import com.example.data.database.entity.CatData
+import com.example.data.network.api.CatService
+import com.example.data.network.entity.CatResponse
 
 internal class CatRepositoryImpl(private val catService: CatService) : CatRepository {
     override suspend fun getList(): List<CatResponse> {
@@ -9,5 +10,17 @@ internal class CatRepositoryImpl(private val catService: CatService) : CatReposi
             return this
         }
         return emptyList()
+    }
+
+    override suspend fun getFavorites(): List<CatData> {
+        TODO("Not yet implemented")
+    }
+
+    override suspend fun deleteFromFavorites(id: String) {
+        TODO("Not yet implemented")
+    }
+
+    override suspend fun addToFavorites(cat: CatData) {
+        TODO("Not yet implemented")
     }
 }
