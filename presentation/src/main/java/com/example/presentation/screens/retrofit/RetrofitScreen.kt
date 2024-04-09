@@ -1,16 +1,18 @@
 @file:OptIn(ExperimentalMaterial3Api::class)
 
-package com.example.presentation.screens.pink
+package com.example.presentation.screens.retrofit
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.pulltorefresh.PullToRefreshContainer
 import androidx.compose.material3.pulltorefresh.rememberPullToRefreshState
@@ -30,23 +32,26 @@ import com.example.presentation.R
 import com.example.presentation.utils.Palette
 
 @Composable
-fun PinkScreen(viewModel: PinkViewModel) {
+fun RetrofitScreen(viewModel: RetrofitViewModel) {
     val state by viewModel.state.collectAsStateWithLifecycle()
 
 
 
-    LaunchedEffect(Unit) { viewModel.onEvent(PinkContracts.Event.OnLoad) }
+    LaunchedEffect(Unit) { viewModel.onEvent(RetrofitContracts.Event.OnLoad) }
 
     ScreenContent(state = state, onEvent = viewModel::onEvent)
 }
 
 @Composable
-private fun ScreenContent(state: PinkContracts.State, onEvent: (PinkContracts.Event) -> Unit) {
+private fun ScreenContent(
+    state: RetrofitContracts.State,
+    onEvent: (RetrofitContracts.Event) -> Unit,
+) {
     val refreshState = rememberPullToRefreshState()
 
     if (refreshState.isRefreshing) {
         LaunchedEffect(true) {
-            onEvent(PinkContracts.Event.OnLoad)
+            onEvent(RetrofitContracts.Event.OnLoad)
         }
     }
 
@@ -65,7 +70,7 @@ private fun ScreenContent(state: PinkContracts.State, onEvent: (PinkContracts.Ev
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
             items(state.images) { catUi ->
-                ListItem(image = catUi.image)
+                ListItem(image = catUi.image, true)
             }
         }
 
@@ -77,16 +82,31 @@ private fun ScreenContent(state: PinkContracts.State, onEvent: (PinkContracts.Ev
 }
 
 @Composable
-private fun ListItem(image: String) {
-    AsyncImage(
-        model = image,
-        contentScale = ContentScale.FillWidth,
-        placeholder = painterResource(R.drawable.ic_paws),
-        contentDescription = null,
-        modifier = Modifier
-            .fillMaxWidth()
-            .wrapContentHeight()
-    )
+private fun ListItem(image: String, isFavorite: Boolean = false) {
+    Box(modifier = Modifier) {
+        AsyncImage(
+            model = image,
+            contentScale = ContentScale.FillWidth,
+            placeholder = painterResource(R.drawable.ic_paws),
+            contentDescription = null,
+            modifier = Modifier
+                .fillMaxWidth()
+                .wrapContentHeight()
+        )
+        Icon(
+            modifier = Modifier
+                .align(Alignment.TopEnd)
+                .size(24.dp),
+            painter = painterResource(
+                id = if (isFavorite) {
+                    R.drawable.ic_favorite
+                } else R.drawable.ic_unfavorite
+            ), contentDescription = null,
+
+            tint = Palette.Yellow
+        )
+    }
+
 }
 
 @Preview(showBackground = true, showSystemUi = true)
@@ -94,8 +114,19 @@ private fun ListItem(image: String) {
 private fun ScreenPreview() {
     MaterialTheme {
         ScreenContent(
-            state = PinkContracts.State(),
+            state = RetrofitContracts.State(),
             onEvent = {}
+        )
+    }
+}
+
+@Preview(showBackground = true, showSystemUi = true)
+@Composable
+private fun ItemPreview() {
+    MaterialTheme {
+        ListItem(
+            image = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Felis_catus-cat_on_snow.jpg/358px-Felis_catus-cat_on_snow.jpg",
+            isFavorite = true
         )
     }
 }

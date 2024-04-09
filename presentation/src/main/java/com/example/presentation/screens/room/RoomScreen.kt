@@ -1,4 +1,4 @@
-package com.example.presentation.screens.vilolet
+package com.example.presentation.screens.room
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -16,7 +16,7 @@ import com.example.presentation.utils.Palette
 
 @SuppressWarnings("UnusedParameter")
 @Composable
-fun VioletScreen(viewModel: VioletViewModel) {
+fun RoomScreen(viewModel: RoomViewModel) {
     ScreenContent()
 }
 

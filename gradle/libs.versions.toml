@@ -9,6 +9,7 @@ compose-bom = "2024.04.00"
 nav-version = "2.7.7"
 lottie = "6.4.0"
 lottie-compose = "4.0.0"
+room = "2.6.1"
 
 okhttp-bom = "4.12.0"
 gson = "2.10.1"
@@ -44,13 +45,18 @@ gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
 logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor" }
 retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
+
+room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+room-runtime = {group = "androidx.room", name = "room-runtime", version.ref = "room"}
+room-ktx = {group = "androidx.room", name = "room-ktx", version.ref = "room" }
+
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
 hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hilt-navigation-compose" }
 lifecycle-runtime-compose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "lifecycle-runtime-compose" }
 coil-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil-compose" }
 
-detekt-compose-rules = {group = "io.nlopez.compose.rules", name = "detekt", version.ref = "detekt-compose-rules"}
+detekt-compose-rules = { group = "io.nlopez.compose.rules", name = "detekt", version.ref = "detekt-compose-rules" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
@@ -59,5 +65,5 @@ ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint" }
-detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt"}
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 

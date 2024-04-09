@@ -1,22 +1,22 @@
-package com.example.presentation.screens.pink
+package com.example.presentation.screens.retrofit
 
 import androidx.lifecycle.viewModelScope
 import com.example.domain.use_case.GetCatListUseCase
 import com.example.presentation.core.BaseViewModel
-import com.example.presentation.screens.pink.mapper.toCatUi
+import com.example.presentation.screens.retrofit.mapper.toCatUi
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class PinkViewModel @Inject constructor(
+class RetrofitViewModel @Inject constructor(
     private val getCatListUseCase: GetCatListUseCase
-) : BaseViewModel<PinkContracts.State, PinkContracts.Event, PinkContracts.Effect>(PinkContracts.State()) {
+) : BaseViewModel<RetrofitContracts.State, RetrofitContracts.Event, RetrofitContracts.Effect>(RetrofitContracts.State()) {
 
-    override fun onEvent(event: PinkContracts.Event) {
+    override fun onEvent(event: RetrofitContracts.Event) {
         super.onEvent(event)
         when (event) {
-            PinkContracts.Event.OnLoad -> load()
+            RetrofitContracts.Event.OnLoad -> load()
         }
     }
 

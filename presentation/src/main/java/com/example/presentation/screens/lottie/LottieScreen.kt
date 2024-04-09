@@ -1,4 +1,4 @@
-package com.example.presentation.screens.blue
+package com.example.presentation.screens.lottie
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -19,7 +19,7 @@ import com.example.presentation.utils.Palette
 
 @SuppressWarnings("UnusedParameter")
 @Composable
-fun BlueScreen(viewModel: BlueViewModel) {
+fun LottieScreen(viewModel: LottieViewModel) {
 
     ScreenContent()
 }

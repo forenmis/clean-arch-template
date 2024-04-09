@@ -1,8 +1,8 @@
-package com.example.presentation.screens.blue
+package com.example.presentation.screens.room
 
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class BlueViewModel @Inject constructor() : ViewModel()
+class RoomViewModel @Inject constructor() : ViewModel()

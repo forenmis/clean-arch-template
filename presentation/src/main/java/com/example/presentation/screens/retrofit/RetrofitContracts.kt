@@ -1,11 +1,11 @@
-package com.example.presentation.screens.pink
+package com.example.presentation.screens.retrofit
 
 import com.example.presentation.core.BaseEffect
 import com.example.presentation.core.BaseEvent
 import com.example.presentation.core.BaseState
-import com.example.presentation.screens.pink.entity.CatUi
+import com.example.presentation.screens.retrofit.entity.CatUi
 
-class PinkContracts {
+class RetrofitContracts {
     data class State(
         val images: List<CatUi> = emptyList(),
         val isLoading: Boolean = true

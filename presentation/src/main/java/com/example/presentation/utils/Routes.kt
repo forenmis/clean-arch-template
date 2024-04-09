@@ -1,17 +1,23 @@
 package com.example.presentation.utils
 
+import com.example.presentation.R
+
 
 object Routes {
     const val HOME = "home"
 }
 
-sealed class BottomRoute(val route: String) {
-    data object Green : BottomRoute("green")
-    data object Violet : BottomRoute("violet")
-    data object Pink : BottomRoute("pink")
-    data object Blue : BottomRoute("blue")
+sealed class BottomRoute(
+    val route: String,
+    val selectedIconRes: Int = R.drawable.ic_open_box,
+    val unSelectedIconRes: Int = R.drawable.ic_closed_box,
+) {
+    data object Welcome : BottomRoute("welcome")
+    data object Room : BottomRoute("room")
+    data object Retrofit : BottomRoute("retrofit")
+    data object Lottie : BottomRoute("lottie")
 
     companion object {
-        fun all(): List<BottomRoute> = listOf(Green, Violet, Pink, Blue)
+        fun all(): List<BottomRoute> = listOf(Welcome, Room, Retrofit, Lottie)
     }
 }

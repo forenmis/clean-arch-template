@@ -1,8 +1,8 @@
-package com.example.presentation.screens.vilolet
+package com.example.presentation.screens.welcome
 
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class VioletViewModel @Inject constructor() : ViewModel()
+class WelcomeViewModel @Inject constructor() : ViewModel()

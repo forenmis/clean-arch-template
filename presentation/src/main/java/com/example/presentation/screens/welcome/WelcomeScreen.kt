@@ -1,4 +1,4 @@
-package com.example.presentation.screens.yellow
+package com.example.presentation.screens.welcome
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -16,7 +16,7 @@ import com.example.presentation.utils.Palette
 
 @SuppressWarnings("UnusedParameter")
 @Composable
-fun GreenScreen(viewModel: GreenViewModel) {
+fun WelcomeScreen(viewModel: WelcomeViewModel) {
     ScreenContent()
 }
 
