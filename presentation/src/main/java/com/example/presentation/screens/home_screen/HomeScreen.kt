@@ -1,4 +1,4 @@
-package com.example.presentation.screens.home
+package com.example.presentation.screens.home_screen
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -23,10 +23,10 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.example.presentation.screens.lottie.LottieScreen
-import com.example.presentation.screens.retrofit.RetrofitScreen
-import com.example.presentation.screens.room.RoomScreen
-import com.example.presentation.screens.welcome.WelcomeScreen
+import com.example.presentation.screens.lottie_screen.LottieScreen
+import com.example.presentation.screens.retrofit_screen.RetrofitScreen
+import com.example.presentation.screens.room_screen.RoomScreen
+import com.example.presentation.screens.welcome_screen.WelcomeScreen
 import com.example.presentation.utils.BottomRoute
 import com.example.presentation.utils.Palette
 

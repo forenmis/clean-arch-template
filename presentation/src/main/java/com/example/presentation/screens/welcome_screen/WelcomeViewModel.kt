@@ -1,8 +1,8 @@
-package com.example.presentation.screens.home
+package com.example.presentation.screens.welcome_screen
 
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class HomeViewModel @Inject constructor() : ViewModel()
+class WelcomeViewModel @Inject constructor() : ViewModel()

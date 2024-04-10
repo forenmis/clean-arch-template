@@ -1,5 +1,6 @@
 package com.example.data.di
 
+import com.example.data.database.dao.CatDao
 import com.example.data.database.di.DatabaseModule
 import com.example.data.network.api.CatService
 import com.example.data.network.di.ApiServiceModule
@@ -15,6 +16,9 @@ import dagger.hilt.components.SingletonComponent
 internal object DataModule {
 
     @Provides
-    fun provideCatRepository(catService: CatService): CatRepository = CatRepositoryImpl(catService)
+    fun provideCatRepository(
+        catService: CatService,
+        catDao: CatDao,
+    ): CatRepository = CatRepositoryImpl(catService, catDao)
 
 }

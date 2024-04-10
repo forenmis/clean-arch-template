@@ -1,6 +1,6 @@
 package com.example.data.database.di
 
-import android.content.Context
+import android.app.Application
 import androidx.room.Room
 import com.example.data.BuildConfig
 import com.example.data.database.CatDatabase
@@ -15,7 +15,7 @@ import dagger.hilt.components.SingletonComponent
 internal object DatabaseModule {
 
     @Provides
-    fun provideCatDatabase(context: Context): CatDatabase {
+    fun provideCatDatabase(context: Application): CatDatabase {
         return Room.databaseBuilder(
             context,
             CatDatabase::class.java,

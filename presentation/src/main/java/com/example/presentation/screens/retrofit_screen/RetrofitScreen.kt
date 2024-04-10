@@ -1,19 +1,14 @@
 @file:OptIn(ExperimentalMaterial3Api::class)
 
-package com.example.presentation.screens.retrofit
+package com.example.presentation.screens.retrofit_screen
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.pulltorefresh.PullToRefreshContainer
 import androidx.compose.material3.pulltorefresh.rememberPullToRefreshState
@@ -23,13 +18,11 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
-import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import coil.compose.AsyncImage
-import com.example.presentation.R
+import com.example.presentation.screens.retrofit_screen.entity.CatUi
+import com.example.presentation.screens.shared_components.ListItem
 import com.example.presentation.utils.Palette
 
 @Composable
@@ -71,7 +64,12 @@ private fun ScreenContent(
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
             items(state.images) { catUi ->
-                ListItem(image = catUi.image, true)
+                ListItem(
+                    catUi = catUi,
+                    isFavorite = catUi.isFavorite,
+                    onAddToFavorite = { onEvent(RetrofitContracts.Event.OnAddToFavorite(it)) },
+                    onDeleteFromFavorite = { onEvent(RetrofitContracts.Event.OnDeleteFromFavorite(it.id)) }
+                )
             }
         }
 
@@ -80,35 +78,6 @@ private fun ScreenContent(
             state = refreshState
         )
     }
-}
-
-@Composable
-private fun ListItem(image: String, isFavorite: Boolean = false) {
-    Box(modifier = Modifier) {
-        AsyncImage(
-            model = image,
-            contentScale = ContentScale.FillWidth,
-            placeholder = painterResource(R.drawable.ic_paws),
-            contentDescription = null,
-            modifier = Modifier
-                .fillMaxWidth()
-                .wrapContentHeight()
-        )
-        Icon(
-            modifier = Modifier
-                .padding(16.dp)
-                .align(Alignment.TopEnd)
-                .size(24.dp),
-            painter = painterResource(
-                id = if (isFavorite) {
-                    R.drawable.ic_favorite
-                } else R.drawable.ic_unfavorite
-            ), contentDescription = null,
-
-            tint = Palette.Yellow
-        )
-    }
-
 }
 
 @Preview(showBackground = true, showSystemUi = true)
@@ -127,8 +96,12 @@ private fun ScreenPreview() {
 private fun ItemPreview() {
     MaterialTheme {
         ListItem(
-            image = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Felis_catus-cat_on_snow.jpg/358px-Felis_catus-cat_on_snow.jpg",
-            isFavorite = true
-        )
+            isFavorite = true,
+            catUi = CatUi(
+                id = "q",
+                image = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Felis_catus-cat_on_snow.jpg/358px-Felis_catus-cat_on_snow.jpg",
+            ),
+            onDeleteFromFavorite = {},
+            onAddToFavorite = {})
     }
 }

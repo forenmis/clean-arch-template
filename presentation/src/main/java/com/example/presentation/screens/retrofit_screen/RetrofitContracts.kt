@@ -1,18 +1,20 @@
-package com.example.presentation.screens.retrofit
+package com.example.presentation.screens.retrofit_screen
 
 import com.example.presentation.core.BaseEffect
 import com.example.presentation.core.BaseEvent
 import com.example.presentation.core.BaseState
-import com.example.presentation.screens.retrofit.entity.CatUi
+import com.example.presentation.screens.retrofit_screen.entity.CatUi
 
 class RetrofitContracts {
     data class State(
         val images: List<CatUi> = emptyList(),
-        val isLoading: Boolean = true
+        val isLoading: Boolean = true,
     ) : BaseState
 
     sealed interface Event : BaseEvent {
         data object OnLoad : Event
+        data class OnAddToFavorite(val catUi: CatUi) : Event
+        data class OnDeleteFromFavorite(val id : String) : Event
     }
 
     sealed interface Effect : BaseEffect

@@ -1,4 +1,4 @@
-package com.example.presentation.screens.room
+package com.example.presentation.screens.welcome_screen
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -16,7 +16,7 @@ import com.example.presentation.utils.Palette
 
 @SuppressWarnings("UnusedParameter")
 @Composable
-fun RoomScreen(viewModel: RoomViewModel) {
+fun WelcomeScreen(viewModel: WelcomeViewModel) {
     ScreenContent()
 }
 
@@ -26,7 +26,7 @@ private fun ScreenContent() {
         Icon(
             painter = painterResource(id = R.drawable.ic_drops),
             contentDescription = null,
-            tint = Palette.Violet,
+            tint = Palette.Green,
             modifier = Modifier.size(200.dp)
         )
     }
