@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="welcome">Welcome!</string>
+    <string name="welcome_description_part1">To our Android project template, designed for instant kick-start of your next application! Our template provides everything you need for efficient project creation on the Android platform.</string>
+    <string name="welcome_description_part2">We have already added features such as Room and Retrofit to make it more convenient for you to connect your data sources. And also added a simple one!! to make it easy for you to implement your design.</string>
+    <string name="welcome_description_part3">Now even those who have paws can create an Android application!</string>
+    <string name="tap_to_read_more">Tap to read more about tech stack</string>
+
+</resources>

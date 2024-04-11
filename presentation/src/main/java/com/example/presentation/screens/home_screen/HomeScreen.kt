@@ -15,7 +15,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
@@ -28,6 +27,7 @@ import com.example.presentation.screens.retrofit_screen.RetrofitScreen
 import com.example.presentation.screens.room_screen.RoomScreen
 import com.example.presentation.screens.welcome_screen.WelcomeScreen
 import com.example.presentation.utils.BottomRoute
+import com.example.presentation.utils.Dimens
 import com.example.presentation.utils.Palette
 
 @SuppressWarnings("UnusedParameter")
@@ -60,7 +60,7 @@ private fun ScreenContent() {
                             screen.unSelectedIconRes
                         }
                         Icon(
-                            modifier = Modifier.size(36.dp),
+                            modifier = Modifier.size(Dimens.BottomNavigationItemSize),
                             painter = painterResource(iconRes),
                             contentDescription = null,
                             tint = Color.Unspecified

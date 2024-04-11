@@ -1,6 +1,4 @@
 import Constants.JVM_TARGET
-import Constants.SOURCE_COMPATIBILITY
-import Constants.TARGET_COMPATIBILITY
 import io.gitlab.arturbosch.detekt.Detekt
 import io.gitlab.arturbosch.detekt.DetektCreateBaselineTask
 

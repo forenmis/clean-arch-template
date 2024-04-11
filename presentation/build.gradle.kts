@@ -18,7 +18,16 @@ android {
     compileSdk = COMPILE_SDK
 
     buildFeatures {
+        buildConfig = true
         compose = true
+    }
+    buildTypes {
+        debug {
+            buildConfigField("String", "README", "\"https://github.com/forenmis/clean-arch-template/blob/main/README.md\"")
+        }
+        release {
+            buildConfigField("String", "README", "\"https://github.com/forenmis/clean-arch-template/blob/main/README.md\"")
+        }
     }
 
     composeOptions {

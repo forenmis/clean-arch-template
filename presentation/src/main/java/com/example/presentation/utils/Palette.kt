@@ -5,6 +5,7 @@ import androidx.compose.ui.graphics.Color
 object Palette {
     val Yellow = Color(0xFFFBF0B2)
     val Violet = Color(0xFFD8B4F8)
+    val VioletDark = Color(0xFF5B1C92)
     val Pink = Color(0xFFFFC7EA)
     val Blue = Color(0xFFCAEDFF)
     val Green = Color(0xFFCCEEBC)

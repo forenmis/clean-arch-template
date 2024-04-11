@@ -13,11 +13,11 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.presentation.R
 import com.example.presentation.screens.shared_components.Animation
 import com.example.presentation.screens.shared_components.ListItem
+import com.example.presentation.utils.Dimens
 import com.example.presentation.utils.Palette
 
 @Composable
@@ -49,7 +49,7 @@ private fun ScreenContent(
         } else {
             LazyColumn(
                 modifier = Modifier.fillMaxSize(),
-                verticalArrangement = Arrangement.spacedBy(8.dp)
+                verticalArrangement = Arrangement.spacedBy(Dimens.BasePadding)
             ) {
                 items(state.images) { catUi ->
                     ListItem(
@@ -66,6 +66,6 @@ private fun ScreenContent(
 @Composable
 private fun ScreenPreview() {
     MaterialTheme {
-        //ScreenContent()
+        ScreenContent(state = RoomContracts.State(), onEvent = {})
     }
 }

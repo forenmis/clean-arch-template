@@ -9,9 +9,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.unit.dp
 import com.example.presentation.R
 import com.example.presentation.screens.retrofit_screen.entity.CatUi
+import com.example.presentation.utils.Dimens
 import com.example.presentation.utils.Palette
 
 @Composable
@@ -27,10 +27,10 @@ internal fun BoxScope.FavoriteIcon(
 
     Icon(
         modifier = Modifier
-            .padding(16.dp)
+            .padding(Dimens.BaseDoublePadding)
             .clickable { onClick(catUi) }
             .align(Alignment.TopEnd)
-            .size(24.dp),
+            .size(Dimens.BaseTriplePadding),
         painter = painterResource(id = icon),
         contentDescription = null,
         tint = Palette.Yellow)
