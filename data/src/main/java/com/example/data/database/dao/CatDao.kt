@@ -10,10 +10,10 @@ interface CatDao {
     @Insert
     suspend fun addToFavorites(cat: CatData)
 
-    @Query("SELECT * FROM CatData")
+    @Query("SELECT * FROM cat_images")
     suspend fun getFavorites(): List<CatData>
 
-    @Query("DELETE FROM CatData WHERE id = :id")
+    @Query("DELETE FROM cat_images WHERE id = :id")
     suspend fun deleteFromFavorites(id: String)
 
 }

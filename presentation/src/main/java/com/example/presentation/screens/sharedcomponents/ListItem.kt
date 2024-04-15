@@ -1,4 +1,4 @@
-package com.example.presentation.screens.shared_components
+package com.example.presentation.screens.sharedcomponents
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -9,7 +9,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import coil.compose.AsyncImage
 import com.example.presentation.R
-import com.example.presentation.screens.retrofit_screen.entity.CatUi
+import com.example.presentation.screens.retrofitscreen.entity.CatUi
 
 @Composable
 internal fun ListItem(
@@ -32,7 +32,8 @@ internal fun ListItem(
             catUi = catUi,
             isFavorite = isFavorite,
             onAddToFavorite = onAddToFavorite,
-            onDeleteFromFavorite = onDeleteFromFavorite
+            onDeleteFromFavorite = onDeleteFromFavorite,
+            modifier = Modifier
         )
     }
 }

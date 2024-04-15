@@ -1,4 +1,4 @@
-package com.example.presentation.screens.home_screen
+package com.example.presentation.screens.homeScreen
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -22,10 +22,10 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.example.presentation.screens.lottie_screen.LottieScreen
-import com.example.presentation.screens.retrofit_screen.RetrofitScreen
-import com.example.presentation.screens.room_screen.RoomScreen
-import com.example.presentation.screens.welcome_screen.WelcomeScreen
+import com.example.presentation.screens.lottiescreen.LottieScreen
+import com.example.presentation.screens.retrofitscreen.RetrofitScreen
+import com.example.presentation.screens.roomscreen.RoomScreen
+import com.example.presentation.screens.welcomescreen.WelcomeScreen
 import com.example.presentation.utils.BottomRoute
 import com.example.presentation.utils.Dimens
 import com.example.presentation.utils.Palette
@@ -90,7 +90,6 @@ private fun ScreenContent() {
             composable(BottomRoute.Retrofit.route) { RetrofitScreen(viewModel = hiltViewModel()) }
             composable(BottomRoute.Room.route) { RoomScreen(viewModel = hiltViewModel()) }
         }
-
     }
 }
 

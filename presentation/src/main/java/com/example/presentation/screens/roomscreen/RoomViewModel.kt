@@ -1,4 +1,4 @@
-package com.example.presentation.screens.room_screen
+package com.example.presentation.screens.roomscreen
 
 import androidx.lifecycle.viewModelScope
 import com.example.domain.use_case.DeleteFromFavoriteUseCase
@@ -13,11 +13,7 @@ import javax.inject.Inject
 class RoomViewModel @Inject constructor(
     private val getFavoriteCatsUseCase: GetFavoriteCatsUseCase,
     private val deleteFromFavoriteUseCase: DeleteFromFavoriteUseCase,
-) : BaseViewModel<
-        RoomContracts.State,
-        RoomContracts.Event,
-        RoomContracts.Effect>(RoomContracts.State()) {
-
+) : BaseViewModel<RoomContracts.State, RoomContracts.Event, RoomContracts.Effect>(RoomContracts.State()) {
     override fun onEvent(event: RoomContracts.Event) {
         super.onEvent(event)
         when (event) {
@@ -38,5 +34,4 @@ class RoomViewModel @Inject constructor(
     private fun deleteFromFavorite(id: String) = viewModelScope.launch {
         deleteFromFavoriteUseCase.execute(id)
     }
-
 }

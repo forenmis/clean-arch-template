@@ -7,6 +7,7 @@ object Dimens {
     val BaseDoublePadding = 16.dp
     val BaseTriplePadding = 24.dp
     val BottomNavigationItemSize = 36.dp
+    val WelcomeImageSize = BottomNavigationItemSize
     val WelcomeHeaderPadding = BottomNavigationItemSize
-    val WelcomeAnimationSize = 150.dp
+    val WelcomeAnimationSize = 130.dp
 }

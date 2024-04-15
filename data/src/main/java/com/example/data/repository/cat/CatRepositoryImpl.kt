@@ -7,7 +7,8 @@ import com.example.data.network.entity.CatResponse
 
 internal class CatRepositoryImpl(
     private val catService: CatService,
-    private val catDao: CatDao) : CatRepository {
+    private val catDao: CatDao,
+) : CatRepository {
     override suspend fun getList(): List<CatResponse> {
         catService.getCats().runCatching {
             return this
@@ -16,7 +17,7 @@ internal class CatRepositoryImpl(
     }
 
     override suspend fun getFavorites(): List<CatData> {
-      return catDao.getFavorites()
+        return catDao.getFavorites()
     }
 
     override suspend fun deleteFromFavorites(id: String) {
@@ -24,6 +25,6 @@ internal class CatRepositoryImpl(
     }
 
     override suspend fun addToFavorites(cat: CatData) {
-      catDao.addToFavorites(cat)
+        catDao.addToFavorites(cat)
     }
 }

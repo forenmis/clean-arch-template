@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalMaterial3Api::class)
 
-package com.example.presentation.screens.retrofit_screen
+package com.example.presentation.screens.retrofitscreen
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -20,19 +20,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.example.presentation.screens.retrofit_screen.entity.CatUi
-import com.example.presentation.screens.shared_components.ListItem
+import com.example.presentation.screens.retrofitscreen.entity.CatUi
+import com.example.presentation.screens.sharedcomponents.ListItem
 import com.example.presentation.utils.Dimens
 import com.example.presentation.utils.Palette
 
 @Composable
 fun RetrofitScreen(viewModel: RetrofitViewModel) {
     val state by viewModel.state.collectAsStateWithLifecycle()
-
-
-
     LaunchedEffect(Unit) { viewModel.onEvent(RetrofitContracts.Event.OnLoad) }
-
     ScreenContent(state = state, onEvent = viewModel::onEvent)
 }
 
@@ -91,6 +87,7 @@ private fun ScreenPreview() {
     }
 }
 
+@SuppressWarnings("MaxLineLength")
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 private fun ItemPreview() {

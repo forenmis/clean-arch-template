@@ -20,8 +20,9 @@ object AnnotatedStringHelper {
                     color = Palette.VioletDark,
                     fontSize = 16.sp,
                     fontStyle = FontStyle.Italic,
-
-                    ), start = startIndex, end = endIndex
+                ),
+                start = startIndex,
+                end = endIndex
             )
             addStringAnnotation(
                 tag = tag,
@@ -30,6 +31,5 @@ object AnnotatedStringHelper {
                 end = endIndex
             )
         }
-
     }
 }

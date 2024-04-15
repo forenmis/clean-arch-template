@@ -1,4 +1,4 @@
-package com.example.presentation.screens.room_screen
+package com.example.presentation.screens.roomscreen
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -15,8 +15,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.presentation.R
-import com.example.presentation.screens.shared_components.Animation
-import com.example.presentation.screens.shared_components.ListItem
+import com.example.presentation.screens.sharedcomponents.Animation
+import com.example.presentation.screens.sharedcomponents.ListItem
 import com.example.presentation.utils.Dimens
 import com.example.presentation.utils.Palette
 
@@ -34,8 +34,7 @@ fun RoomScreen(viewModel: RoomViewModel) {
 
 @Composable
 private fun ScreenContent(
-    state: RoomContracts.State,
-    onEvent: (RoomContracts.Event) -> Unit,
+    state: RoomContracts.State, onEvent: (RoomContracts.Event) -> Unit,
 ) {
     Box(
         modifier = Modifier

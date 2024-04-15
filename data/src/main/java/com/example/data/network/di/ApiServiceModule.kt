@@ -38,7 +38,6 @@ internal object ApiServiceModule {
                 if (BuildConfig.DEBUG) addInterceptor(interceptor)
             }
             .build()
-
     }
 
     @Provides
@@ -52,5 +51,4 @@ internal object ApiServiceModule {
 
     @Provides
     fun provideCatService(retrofit: Retrofit): CatService = retrofit.create<CatService>()
-
 }

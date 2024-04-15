@@ -1,4 +1,4 @@
-package com.example.presentation.screens.shared_components
+package com.example.presentation.screens.sharedcomponents
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -11,7 +11,7 @@ import com.example.presentation.utils.Dimens
 
 
 @Composable
-fun LinkText(text: String, link: String) {
+fun LinkText(text: String, link: String, modifier: Modifier = Modifier) {
     val tag = AnnotatedStringHelper.TAG_URL
     val formattedText = AnnotatedStringHelper.formatLink(
         text = text,
@@ -22,7 +22,7 @@ fun LinkText(text: String, link: String) {
     val uriHandler = LocalUriHandler.current
 
     ClickableText(
-        modifier = Modifier
+        modifier = modifier
             .padding(Dimens.BasePadding)
             .fillMaxWidth(),
         text = formattedText,
@@ -35,4 +35,3 @@ fun LinkText(text: String, link: String) {
         }
     )
 }
-

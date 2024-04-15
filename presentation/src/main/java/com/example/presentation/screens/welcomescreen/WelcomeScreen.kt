@@ -1,10 +1,12 @@
-package com.example.presentation.screens.welcome_screen
+package com.example.presentation.screens.welcomescreen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.MaterialTheme
@@ -18,8 +20,8 @@ import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.presentation.BuildConfig
 import com.example.presentation.R
-import com.example.presentation.screens.shared_components.Animation
-import com.example.presentation.screens.shared_components.LinkText
+import com.example.presentation.screens.sharedcomponents.Animation
+import com.example.presentation.screens.sharedcomponents.LinkText
 import com.example.presentation.utils.Dimens
 import com.example.presentation.utils.TextSizes
 import com.example.presentation.utils.Weights
@@ -30,9 +32,9 @@ fun WelcomeScreen(viewModel: WelcomeViewModel) {
     ScreenContent()
 }
 
+@SuppressWarnings("LongMethod")
 @Composable
 private fun ScreenContent() {
-
     Row {
         Column(
             modifier = Modifier
@@ -43,7 +45,8 @@ private fun ScreenContent() {
                 painter = painterResource(id = R.drawable.jetpack),
                 contentDescription = null,
                 modifier = Modifier
-                    .size(Dimens.WelcomeAnimationSize)
+                    .fillMaxWidth()
+                    .height(Dimens.WelcomeAnimationSize)
                     .padding(Dimens.BasePadding)
                     .align(Alignment.CenterHorizontally)
             )
@@ -57,7 +60,12 @@ private fun ScreenContent() {
                 fontSize = TextSizes.BaseTextSize
             )
 
-            Animation(resId = R.raw.paws, modifier = Modifier.size(Dimens.WelcomeAnimationSize))
+            Animation(
+                resId = R.raw.paws,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(Dimens.WelcomeAnimationSize)
+            )
 
             Text(
                 text = stringResource(id = R.string.welcome_description_part3),
@@ -85,6 +93,13 @@ private fun ScreenContent() {
             )
             Spacer(modifier = Modifier.size(Dimens.WelcomeAnimationSize))
 
+            Image(
+                modifier = Modifier
+                    .height(Dimens.WelcomeImageSize)
+                    .fillMaxWidth(),
+                painter = painterResource(id = R.drawable.ic_cat_type2),
+                contentDescription = null
+            )
 
             Text(
                 text = stringResource(id = R.string.welcome_description_part2),
@@ -97,6 +112,14 @@ private fun ScreenContent() {
 
             Spacer(modifier = Modifier.size(Dimens.WelcomeAnimationSize))
 
+            Image(
+                modifier = Modifier
+                    .height(Dimens.WelcomeImageSize)
+                    .fillMaxWidth(),
+                painter = painterResource(id = R.drawable.ic_cat_type1),
+                contentDescription = null
+            )
+
             LinkText(
                 text = stringResource(id = R.string.tap_to_read_more),
                 link = BuildConfig.README
@@ -104,7 +127,6 @@ private fun ScreenContent() {
         }
     }
 }
-
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable

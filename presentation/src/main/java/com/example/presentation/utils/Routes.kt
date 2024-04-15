@@ -2,7 +2,6 @@ package com.example.presentation.utils
 
 import com.example.presentation.R
 
-
 object Routes {
     const val HOME = "home"
 }

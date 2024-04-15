@@ -46,7 +46,6 @@ android {
     kotlinOptions {
         jvmTarget = JVM_TARGET
     }
-
 }
 
 dependencies {

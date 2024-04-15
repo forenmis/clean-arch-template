@@ -1,4 +1,4 @@
-package com.example.presentation.screens.lottie_screen
+package com.example.presentation.screens.lottiescreen
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -9,7 +9,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.presentation.R
-import com.example.presentation.screens.shared_components.Animation
+import com.example.presentation.screens.sharedcomponents.Animation
 import com.example.presentation.utils.Palette
 
 @SuppressWarnings("UnusedParameter")

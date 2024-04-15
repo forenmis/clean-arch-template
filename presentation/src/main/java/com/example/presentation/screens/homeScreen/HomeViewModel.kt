@@ -1,8 +1,8 @@
-package com.example.presentation.screens.lottie_screen
+package com.example.presentation.screens.homeScreen
 
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class LottieViewModel @Inject constructor() : ViewModel()
+class HomeViewModel @Inject constructor() : ViewModel()

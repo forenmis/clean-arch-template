@@ -1,4 +1,4 @@
-package com.example.presentation.screens.retrofit_screen
+package com.example.presentation.screens.retrofitscreen
 
 import androidx.lifecycle.viewModelScope
 import com.example.domain.use_case.AddToFavoriteUseCase
@@ -8,7 +8,7 @@ import com.example.domain.use_case.GetFavoriteCatsUseCase
 import com.example.presentation.core.BaseViewModel
 import com.example.presentation.mapper.toCatModel
 import com.example.presentation.mapper.toCatUi
-import com.example.presentation.screens.retrofit_screen.entity.CatUi
+import com.example.presentation.screens.retrofitscreen.entity.CatUi
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
