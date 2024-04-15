@@ -10,10 +10,10 @@ Welcome to our Android project template, designed for instant kick-start of your
 We offer a straightforward and intuitive setup process, enabling you to get started on your project quickly without unnecessary complexities.
 
 ### Ready-made architecture
-Our template comes pre-configured with modern architectural approaches such as MVI, MVVM, Clean Architecture, allowing you to dive into development without the need to build the architecture from scratch.
+Our template comes pre-configured with modern architectural approaches such as MVI, Clean Architecture, allowing you to dive into development without the need to build the architecture from scratch.
 
 ### Integration of tools
-We incorporate the most popular and powerful tools into the project, such as Retrofit for networking, so you can focus on developing your application's functionality rather than integrating tools.
+We incorporate the most popular and powerful tools into the project, such as Retrofit for networking and Room for saving data so you can focus on developing your application's functionality rather than integrating tools.
 
 Our template is the perfect solution for those looking to save time on initial project setup and focus on creating a high-quality Android application. Start using our template now and accelerate your development process!
 
@@ -30,3 +30,13 @@ Our template is the perfect solution for those looking to save time on initial p
 - **Hilt**: We employ Hilt, a powerful dependency injection tool from Google, to ensure ease of dependency management and inversion of control in our project.
 
 - **Compose Navigation**: For simplified navigation and a more declarative approach, we use Compose Navigation, making navigation management more convenient and readable.
+
+## Screenshots
+
+![screenshot_1 ](https://github.com/forenmis/clean-arch-template/assets/126270280/2ca06750-f958-4fba-ada9-1982cabe380e) 
+![screenshot_2](https://github.com/forenmis/clean-arch-template/assets/126270280/0be1fccc-51ab-44e3-9e57-05ee88b28ac7) 
+![screenshot_3](https://github.com/forenmis/clean-arch-template/assets/126270280/5b7b6153-07ce-450e-ae43-95898ba8d6ef)
+
+![screenshot_4](https://github.com/forenmis/clean-arch-template/assets/126270280/2f771c75-a9a1-4cfc-b3d3-a7b1bc3d2245)
+![screenshot_5](https://github.com/forenmis/clean-arch-template/assets/126270280/4d6fa196-7f42-45d9-bcad-d1bff35b120d)
+![screenshot_6 png](https://github.com/forenmis/clean-arch-template/assets/126270280/e4f76c3d-54dc-47c9-add0-86e42a753106)
