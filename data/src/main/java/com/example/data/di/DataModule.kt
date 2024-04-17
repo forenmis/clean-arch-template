@@ -15,8 +15,7 @@ import dagger.hilt.components.SingletonComponent
 @InstallIn(SingletonComponent::class)
 internal object DataModule {
     @Provides
-    fun provideCatRepository(
-        catService: CatService,
-        catDao: CatDao,
-    ): CatRepository = CatRepositoryImpl(catService, catDao)
+    fun provideCatRepository(catService: CatService, catDao: CatDao): CatRepository {
+        return CatRepositoryImpl(catService, catDao)
+    }
 }

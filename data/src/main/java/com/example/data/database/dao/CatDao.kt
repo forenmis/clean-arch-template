@@ -15,5 +15,4 @@ interface CatDao {
 
     @Query("DELETE FROM cat_images WHERE id = :id")
     suspend fun deleteFromFavorites(id: String)
-
 }

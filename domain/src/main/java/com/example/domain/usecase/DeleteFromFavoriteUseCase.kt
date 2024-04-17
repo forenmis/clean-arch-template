@@ -1,4 +1,4 @@
-package com.example.domain.use_case
+package com.example.domain.usecase
 
 import com.example.data.repository.cat.CatRepository
 import javax.inject.Inject

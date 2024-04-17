@@ -33,9 +33,7 @@ fun RoomScreen(viewModel: RoomViewModel) {
 }
 
 @Composable
-private fun ScreenContent(
-    state: RoomContracts.State, onEvent: (RoomContracts.Event) -> Unit,
-) {
+private fun ScreenContent(state: RoomContracts.State, onEvent: (RoomContracts.Event) -> Unit) {
     Box(
         modifier = Modifier
             .fillMaxSize()

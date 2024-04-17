@@ -18,7 +18,6 @@ import retrofit2.create
 @Module
 @InstallIn(SingletonComponent::class)
 internal object ApiServiceModule {
-
     @Provides
     fun provideGson(): Gson {
         return GsonBuilder().serializeNulls().create()

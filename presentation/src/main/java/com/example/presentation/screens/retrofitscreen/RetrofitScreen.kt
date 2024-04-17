@@ -24,6 +24,7 @@ import com.example.presentation.screens.retrofitscreen.entity.CatUi
 import com.example.presentation.screens.sharedcomponents.ListItem
 import com.example.presentation.utils.Dimens
 import com.example.presentation.utils.Palette
+import com.example.presentation.utils.PreviewParams
 
 @Composable
 fun RetrofitScreen(viewModel: RetrofitViewModel) {
@@ -64,7 +65,11 @@ private fun ScreenContent(
                     catUi = catUi,
                     isFavorite = catUi.isFavorite,
                     onAddToFavorite = { onEvent(RetrofitContracts.Event.OnAddToFavorite(it)) },
-                    onDeleteFromFavorite = { onEvent(RetrofitContracts.Event.OnDeleteFromFavorite(it.id)) }
+                    onDeleteFromFavorite = {
+                        onEvent(
+                            RetrofitContracts.Event.OnDeleteFromFavorite(it.id)
+                        )
+                    }
                 )
             }
         }
@@ -87,7 +92,6 @@ private fun ScreenPreview() {
     }
 }
 
-@SuppressWarnings("MaxLineLength")
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 private fun ItemPreview() {
@@ -96,9 +100,10 @@ private fun ItemPreview() {
             isFavorite = true,
             catUi = CatUi(
                 id = "q",
-                image = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Felis_catus-cat_on_snow.jpg/358px-Felis_catus-cat_on_snow.jpg",
+                image = PreviewParams.CAT_IMAGE_URL
             ),
             onDeleteFromFavorite = {},
-            onAddToFavorite = {})
+            onAddToFavorite = {}
+        )
     }
 }

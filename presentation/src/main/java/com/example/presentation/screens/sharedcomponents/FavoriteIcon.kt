@@ -34,5 +34,6 @@ internal fun BoxScope.FavoriteIcon(
             .size(Dimens.BaseTriplePadding),
         painter = painterResource(id = icon),
         contentDescription = null,
-        tint = Palette.Yellow)
+        tint = Palette.Yellow
+    )
 }

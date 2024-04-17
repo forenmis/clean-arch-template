@@ -11,7 +11,7 @@ import com.airbnb.lottie.compose.animateLottieCompositionAsState
 import com.airbnb.lottie.compose.rememberLottieComposition
 
 @Composable
-internal fun Animation(@RawRes resId: Int, modifier: Modifier = Modifier,) {
+internal fun Animation(@RawRes resId: Int, modifier: Modifier = Modifier) {
     val preloaderLottieComposition by rememberLottieComposition(
         LottieCompositionSpec.RawRes(resId)
     )

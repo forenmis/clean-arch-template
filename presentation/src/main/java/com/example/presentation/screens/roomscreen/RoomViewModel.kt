@@ -1,8 +1,8 @@
 package com.example.presentation.screens.roomscreen
 
 import androidx.lifecycle.viewModelScope
-import com.example.domain.use_case.DeleteFromFavoriteUseCase
-import com.example.domain.use_case.GetFavoriteCatsUseCase
+import com.example.domain.usecase.DeleteFromFavoriteUseCase
+import com.example.domain.usecase.GetFavoriteCatsUseCase
 import com.example.presentation.core.BaseViewModel
 import com.example.presentation.mapper.toCatUi
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -13,7 +13,9 @@ import javax.inject.Inject
 class RoomViewModel @Inject constructor(
     private val getFavoriteCatsUseCase: GetFavoriteCatsUseCase,
     private val deleteFromFavoriteUseCase: DeleteFromFavoriteUseCase,
-) : BaseViewModel<RoomContracts.State, RoomContracts.Event, RoomContracts.Effect>(RoomContracts.State()) {
+) : BaseViewModel<RoomContracts.State, RoomContracts.Event, RoomContracts.Effect>(
+    RoomContracts.State()
+) {
     override fun onEvent(event: RoomContracts.Event) {
         super.onEvent(event)
         when (event) {

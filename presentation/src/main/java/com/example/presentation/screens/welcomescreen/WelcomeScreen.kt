@@ -38,7 +38,7 @@ private fun ScreenContent() {
     Row {
         Column(
             modifier = Modifier
-                .weight(Weights.Half)
+                .weight(Weights.HALF)
                 .fillMaxSize()
         ) {
             Image(
@@ -75,12 +75,11 @@ private fun ScreenContent() {
                 fontStyle = FontStyle.Italic,
                 fontSize = TextSizes.BaseTextSize
             )
-
         }
 
         Column(
             modifier = Modifier
-                .weight(Weights.Half)
+                .weight(Weights.HALF)
                 .fillMaxSize()
         ) {
             Text(

@@ -5,8 +5,8 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.example.presentation.utils.Routes
 import com.example.presentation.screens.homeScreen.HomeScreen
+import com.example.presentation.utils.Routes
 
 @Composable
 fun MainNavGraph(navController: NavHostController) {
