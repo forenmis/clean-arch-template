@@ -35,5 +35,5 @@ jobs:
       with:
         name: debug.apk
         path: 
-            $APK_PATH
+            "$APK_PATH"
             
