@@ -9,7 +9,6 @@ import androidx.compose.ui.platform.LocalUriHandler
 import com.example.presentation.utils.AnnotatedStringHelper
 import com.example.presentation.utils.Dimens
 
-
 @Composable
 fun LinkText(text: String, link: String, modifier: Modifier = Modifier) {
     val tag = AnnotatedStringHelper.TAG_URL

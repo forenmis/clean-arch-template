@@ -1,10 +1,10 @@
 package com.example.presentation.screens.retrofitscreen
 
 import androidx.lifecycle.viewModelScope
-import com.example.domain.use_case.AddToFavoriteUseCase
-import com.example.domain.use_case.DeleteFromFavoriteUseCase
-import com.example.domain.use_case.GetCatListUseCase
-import com.example.domain.use_case.GetFavoriteCatsUseCase
+import com.example.domain.usecase.AddToFavoriteUseCase
+import com.example.domain.usecase.DeleteFromFavoriteUseCase
+import com.example.domain.usecase.GetCatListUseCase
+import com.example.domain.usecase.GetFavoriteCatsUseCase
 import com.example.presentation.core.BaseViewModel
 import com.example.presentation.mapper.toCatModel
 import com.example.presentation.mapper.toCatUi

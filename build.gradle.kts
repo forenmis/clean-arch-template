@@ -18,10 +18,12 @@ subprojects {
 
     configure<org.jlleitschuh.gradle.ktlint.KtlintExtension> {
         debug.set(true)
-        ignoreFailures.set(true)
+        ignoreFailures.set(false)
+        filter {
+            exclude("**/PreviewParams.kt")
+        }
     }
 }
-
 
 //detekt
 tasks.withType<Detekt>().configureEach {

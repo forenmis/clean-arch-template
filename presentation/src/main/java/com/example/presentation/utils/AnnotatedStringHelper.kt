@@ -19,7 +19,7 @@ object AnnotatedStringHelper {
                 style = SpanStyle(
                     color = Palette.VioletDark,
                     fontSize = 16.sp,
-                    fontStyle = FontStyle.Italic,
+                    fontStyle = FontStyle.Italic
                 ),
                 start = startIndex,
                 end = endIndex

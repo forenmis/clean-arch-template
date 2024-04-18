@@ -76,7 +76,8 @@ private fun ScreenContent() {
                             launchSingleTop = true
                             restoreState = true
                         }
-                    })
+                    }
+                )
             }
         }
     }) { innerPadding ->

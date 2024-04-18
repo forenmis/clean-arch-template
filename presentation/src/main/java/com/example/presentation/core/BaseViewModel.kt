@@ -9,11 +9,10 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 
 abstract class BaseViewModel<
-        State : BaseState,
-        Event : BaseEvent,
-        Effect : BaseEffect
-        >(initialState: State) : ViewModel() {
-
+    State : BaseState,
+    Event : BaseEvent,
+    Effect : BaseEffect,
+    >(initialState: State) : ViewModel() {
 
     private val _state = MutableStateFlow<State>(initialState)
     internal val state = _state.asStateFlow()

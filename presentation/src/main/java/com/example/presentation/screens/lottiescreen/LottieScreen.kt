@@ -15,7 +15,6 @@ import com.example.presentation.utils.Palette
 @SuppressWarnings("UnusedParameter")
 @Composable
 fun LottieScreen(viewModel: LottieViewModel) {
-
     ScreenContent()
 }
 
@@ -30,7 +29,6 @@ private fun ScreenContent() {
         Animation(resId = R.raw.cat)
     }
 }
-
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
