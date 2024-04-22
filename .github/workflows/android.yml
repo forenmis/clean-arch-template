@@ -43,6 +43,6 @@ jobs:
         BOT_API_KEY: ${{ secrets.BOT_API_KEY }}
         CHAT_ID: ${{ secrets.CHAT_ID }}
       run: |
-        curl -F chat_id=$CHAT_ID -F document=@"${APK_PATH}" -F caption="Apk-$(date +"%Y%m%d-%H%M")" https://api.telegram.org/bot${BOT_API_KEY}/sendDocument
+        curl -F document=@"${APK_PATH}" https://api.telegram.org/bot${BOT_API_KEY}/sendDocument?chat_id=${CHAT_ID}
         
 
