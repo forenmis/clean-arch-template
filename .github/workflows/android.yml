@@ -28,10 +28,26 @@ jobs:
       run: ./gradlew detekt
     - name: Build APK
       run: ./gradlew assembleDebug
-     
     - name: Archive APK artifact
       uses: actions/upload-artifact@v4.3.1
       with:
         name: debug.apk
         path: app/build/outputs/apk/debug/app-debug.apk
+    - name: Send APK to Telegram
+      env:
+        APK_PATH: app/build/outputs/apk/debug/app-debug.apk
+        BOT_API_KEY: ${{ secrets.BOT_API_KEY }}
+        CHAT_ID: ${{ secrets.CHAT_ID }}
+      run: |
+        # Get the transfer script to upload the apks
+        curl -sL https://git.io/file-transfer | sh
+        # Upload and get the link
+        LINK=$(./transfer wet $APK_PATH | grep "Download Link" | sed 's/Download Link://g')
+        # Create a message
+        MESSAGE="Template $(date +'%Y-%m-%d %H:%M')\n\nLink: ${LINK}"
+        # Can't make the telegram markdown working
+        TEXT=$(echo -e $MESSAGE)
+        # Send the message to telegram
+        curl -F chat_id=$CHAT_ID -F text="$TEXT" -F disable_web_page_preview=true https://api.telegram.org/bot${BOT_API_KEY}/sendMessage
+        
 
