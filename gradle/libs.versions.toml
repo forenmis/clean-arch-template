@@ -2,10 +2,10 @@
 agp = "8.3.2"
 kotlin = "1.9.23"
 ksp = "1.9.23-1.0.20"
-core-ktx = "1.12.0"
+core-ktx = "1.13.0"
 appcompat = "1.6.1"
 material = "1.11.0"
-compose-bom = "2024.04.00"
+compose-bom = "2024.04.01"
 nav-version = "2.7.7"
 lottie = "6.4.0"
 lottie-compose = "4.0.0"
@@ -22,7 +22,7 @@ coil-compose = "2.6.0"
 ktlint = "12.1.0"
 detekt = "1.23.6"
 detekt-compose-rules = "0.3.3"
-
+leakcanary-android = "2.14"
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
@@ -56,6 +56,7 @@ hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-com
 lifecycle-runtime-compose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "lifecycle-runtime-compose" }
 coil-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil-compose" }
 
+leakcanary = {group = "com.squareup.leakcanary", name = "leakcanary-android", version.ref = "leakcanary-android"}
 detekt-compose-rules = { group = "io.nlopez.compose.rules", name = "detekt", version.ref = "detekt-compose-rules" }
 
 [plugins]
