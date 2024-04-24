@@ -14,6 +14,10 @@ android {
     namespace = "com.example.common"
     compileSdk = COMPILE_SDK
 
+    buildFeatures {
+        buildConfig = true
+    }
+
     defaultConfig {
         minSdk = MIN_SDK
     }
@@ -32,4 +36,6 @@ dependencies {
     implementation(libs.core.ktx)
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
+
+    implementation(libs.timber)
 }

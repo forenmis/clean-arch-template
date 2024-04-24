@@ -29,7 +29,6 @@ import com.example.presentation.utils.PreviewParams
 @Composable
 fun RetrofitScreen(viewModel: RetrofitViewModel) {
     val state by viewModel.state.collectAsStateWithLifecycle()
-    LaunchedEffect(Unit) { viewModel.onEvent(RetrofitContracts.Event.OnLoad) }
     ScreenContent(state = state, onEvent = viewModel::onEvent)
 }
 

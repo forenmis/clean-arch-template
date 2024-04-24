@@ -1,5 +1,7 @@
 package com.example.data.network.di
 
+import com.example.common.logger.Logger
+import com.example.common.logger.TAG_OKHTTP
 import com.example.data.BuildConfig
 import com.example.data.network.api.CatService
 import com.google.gson.Gson
@@ -24,8 +26,10 @@ internal object ApiServiceModule {
     }
 
     @Provides
-    fun provideLoggingInterceptor(): Interceptor {
-        return HttpLoggingInterceptor().apply {
+    fun provideLoggingInterceptor(logger: Logger): Interceptor {
+        return HttpLoggingInterceptor(logger = { message ->
+            logger.w(TAG_OKHTTP, message)
+        }).apply {
             setLevel(HttpLoggingInterceptor.Level.BODY)
         }
     }

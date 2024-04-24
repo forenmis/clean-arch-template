@@ -47,6 +47,8 @@ android {
 }
 
 dependencies {
+    implementation(project(":common"))
+
     implementation(libs.core.ktx)
     implementation(platform(libs.okhttp.bom))
     implementation(libs.okhttp)

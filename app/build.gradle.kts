@@ -48,6 +48,7 @@ android {
 
 dependencies {
     implementation(project(":presentation"))
+
     implementation(libs.core.ktx)
     implementation(libs.appcompat)
     implementation(libs.material)
