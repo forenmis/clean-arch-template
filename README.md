@@ -24,6 +24,11 @@ We incorporate the most popular and powerful tools into the project, such as Ret
 and Room for saving data so you can focus on developing your application's functionality rather than
 integrating tools.
 
+For the convenience of the developer we added tools like Firebase crashlytics, Timber, LeakCanary, and 
+setup Ktlint and Detekt for folowing code-quality. And also add most useful Github actions. 
+After every successful build you will recive apk-file in Telegram-bot, or you can change this function,
+and recive APK in your e-mail or Slack, etc.
+
 Our template is the perfect solution for those looking to save time on initial project setup and
 focus on creating a high-quality Android application. Start using our template now and accelerate
 your development process!
