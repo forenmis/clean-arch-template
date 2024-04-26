@@ -27,6 +27,19 @@ android {
     kotlinOptions {
         jvmTarget = JVM_TARGET
     }
+
+    buildTypes {
+        debug {
+            manifestPlaceholders["crashlyticsCollectionEnabled"] = false
+        }
+        release {
+            manifestPlaceholders["crashlyticsCollectionEnabled"] = true
+        }
+        create("qa") {
+            initWith(getByName("debug"))
+            manifestPlaceholders["crashlyticsCollectionEnabled"] = true
+        }
+    }
 }
 
 dependencies {

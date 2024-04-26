@@ -22,6 +22,19 @@ android {
         minSdk = MIN_SDK
     }
 
+    buildTypes {
+        debug {
+            manifestPlaceholders["crashlyticsCollectionEnabled"] = false
+        }
+        release {
+            manifestPlaceholders["crashlyticsCollectionEnabled"] = true
+        }
+        create("qa") {
+            initWith(getByName("debug"))
+            manifestPlaceholders["crashlyticsCollectionEnabled"] = true
+        }
+    }
+
     compileOptions {
         sourceCompatibility = SOURCE_COMPATIBILITY
         targetCompatibility = TARGET_COMPATIBILITY

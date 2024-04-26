@@ -9,6 +9,7 @@ plugins {
     alias(libs.plugins.kotlinAndroid)
     alias(libs.plugins.ksp)
     alias(libs.plugins.hilt)
+    alias(libs.plugins.room)
 }
 
 android {
@@ -24,11 +25,22 @@ android {
             buildConfigField("String", "BASE_URL", "\"https://api.thecatapi.com/\"")
             buildConfigField("String", "DATABASE_NAME", "\"Cats\"")
             buildConfigField("int", "DATABASE_VERSION", "1")
+
+            manifestPlaceholders["crashlyticsCollectionEnabled"] = false
         }
         release {
             buildConfigField("String", "BASE_URL", "\"https://api.thecatapi.com/\"")
             buildConfigField("String", "DATABASE_NAME", "\"Cats\"")
             buildConfigField("int", "DATABASE_VERSION", "1")
+
+            manifestPlaceholders["crashlyticsCollectionEnabled"] = true
+        }
+        create("qa") {
+            initWith(getByName("debug"))
+            buildConfigField("String", "BASE_URL", "\"https://api.thecatapi.com/\"")
+            buildConfigField("String", "DATABASE_NAME", "\"Cats\"")
+            buildConfigField("int", "DATABASE_VERSION", "1")
+            manifestPlaceholders["crashlyticsCollectionEnabled"] = true
         }
     }
 
@@ -43,6 +55,10 @@ android {
 
     kotlinOptions {
         jvmTarget = JVM_TARGET
+    }
+
+    room {
+        schemaDirectory("$projectDir/schemas")
     }
 }
 

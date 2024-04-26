@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "731137132499",
+    "project_id": "clean-architecture-templ-3c567",
+    "storage_bucket": "clean-architecture-templ-3c567.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:731137132499:android:2594de0ae4533f1fe29126",
+        "android_client_info": {
+          "package_name": "com.example.cleanarchitecturetemplate"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4Wp5OxSNtYJamr8I585HXkaJS8IeIukc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

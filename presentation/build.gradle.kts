@@ -28,6 +28,7 @@ android {
                 "README",
                 "\"https://github.com/forenmis/clean-arch-template/blob/main/README.md\""
             )
+            manifestPlaceholders["crashlyticsCollectionEnabled"] = false
         }
         release {
             buildConfigField(
@@ -35,6 +36,11 @@ android {
                 "README",
                 "\"https://github.com/forenmis/clean-arch-template/blob/main/README.md\""
             )
+            manifestPlaceholders["crashlyticsCollectionEnabled"] = true
+        }
+        create("qa") {
+            initWith(getByName("debug"))
+            manifestPlaceholders["crashlyticsCollectionEnabled"] = true
         }
     }
 
