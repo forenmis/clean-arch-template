@@ -24,10 +24,16 @@ We incorporate the most popular and powerful tools into the project, such as Ret
 and Room for saving data so you can focus on developing your application's functionality rather than
 integrating tools.
 
-For the convenience of the developer we added tools like Firebase crashlytics, Timber, LeakCanary, and 
+<details>
+<summary>For the convenience of the developer we added tools like Firebase crashlytics, Timber, LeakCanary, and 
 setup Ktlint and Detekt for folowing code-quality. And also add most useful Github actions. 
 After every successful build you will recive apk-file in Telegram-bot, or you can change this function,
-and recive APK in your e-mail or Slack, etc.
+and recive APK in your e-mail or Slack, etc.</summary>
+
+<img width="702" alt="crachlytics_screen" src="https://github.com/forenmis/clean-arch-template/assets/126270280/78665d34-b1a8-482b-82f7-39de2ea0212e"> ![telegram_screen](https://github.com/forenmis/clean-arch-template/assets/126270280/bb0fee06-eae3-4875-9f54-3090dfbcf764)
+
+</details>
+
 
 Our template is the perfect solution for those looking to save time on initial project setup and
 focus on creating a high-quality Android application. Start using our template now and accelerate
