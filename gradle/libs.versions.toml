@@ -2,10 +2,10 @@
 agp = "8.3.2"
 kotlin = "1.9.23"
 ksp = "1.9.23-1.0.20"
-core-ktx = "1.13.0"
+core-ktx = "1.13.1"
 appcompat = "1.6.1"
 material = "1.11.0"
-compose-bom = "2024.04.01"
+compose-bom = "2024.05.00"
 nav-version = "2.7.7"
 lottie = "6.4.0"
 lottie-compose = "4.0.0"
@@ -28,6 +28,7 @@ timber = "5.0.1"
 firebase-bom = "32.8.1"
 google-services = "4.4.1"
 crashlytics = "2.9.9"
+accompanist-permissions = "0.35.0-alpha"
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
@@ -68,6 +69,8 @@ detekt-compose-rules = { group = "io.nlopez.compose.rules", name = "detekt", ver
 firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebase-bom" }
 firebase-crashlytics = { group = "com.google.firebase", name = "firebase-crashlytics-ktx" }
 firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics-ktx" }
+firebase-messaging = { group = "com.google.firebase", name = "firebase-messaging-ktx" }
+accompanist-permissions = { group = "com.google.accompanist", name = "accompanist-permissions", version.ref = "accompanist-permissions" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

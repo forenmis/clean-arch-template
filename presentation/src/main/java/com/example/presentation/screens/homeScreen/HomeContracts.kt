@@ -9,7 +9,9 @@ class HomeContracts {
         val isLoading: Boolean = true,
     ) : BaseState
 
-    sealed interface Event : BaseEvent
+    sealed interface Event : BaseEvent {
+        data object OnNotificationPermissionGranted : Event
+    }
 
     sealed interface Effect : BaseEffect
 }

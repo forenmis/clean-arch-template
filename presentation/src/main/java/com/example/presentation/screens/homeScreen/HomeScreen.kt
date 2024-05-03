@@ -29,6 +29,7 @@ import com.example.presentation.screens.welcomescreen.WelcomeScreen
 import com.example.presentation.utils.BottomRoute
 import com.example.presentation.utils.Dimens
 import com.example.presentation.utils.Palette
+import com.example.presentation.utils.composable.RequestNotificationPermissions
 
 @SuppressWarnings("UnusedParameter")
 @Composable
@@ -36,6 +37,12 @@ fun HomeScreen(viewModel: HomeViewModel) {
     MaterialTheme {
         ScreenContent()
     }
+
+    RequestNotificationPermissions(
+        onPermissionGranted = {
+            viewModel.onEvent(HomeContracts.Event.OnNotificationPermissionGranted)
+        }
+    )
 }
 
 @Composable

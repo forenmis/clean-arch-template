@@ -87,6 +87,10 @@ dependencies {
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
 
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.messaging)
+    implementation(libs.accompanist.permissions)
+
     detektPlugins(libs.detekt.compose.rules)
 }
 
