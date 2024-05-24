@@ -16,34 +16,34 @@ class GetFavoriteCatsUseCaseTest {
 
     @Test
     fun verifyExecution() = runTest {
-        //GIVEN
+        // GIVEN
         whenever(catRepository.getFavorites()).thenReturn(createList())
         val expected = listOf(CatModel("1", "1"))
-        //WHEN
+        // WHEN
         val actual = getFavoriteCatsUseCase.execute()
-        //THEN
+        // THEN
         assertEquals(expected, actual)
     }
 
     @Test
     fun verifyEmptyList() = runTest {
-        //GIVEN
+        // GIVEN
         whenever(catRepository.getFavorites()).thenReturn(emptyList())
         val expected = emptyList<CatData>()
-        //WHEN
+        // WHEN
         val actual = getFavoriteCatsUseCase.execute()
-        //THEN
+        // THEN
         assertEquals(expected, actual)
     }
 
     @Test
     fun verifyException() = runTest {
-        //GIVEN
+        // GIVEN
         val expected = Throwable()
         whenever(catRepository.getFavorites()).doAnswer { throw expected }
-        //WHEN
+        // WHEN
         val actual = runCatching { getFavoriteCatsUseCase.execute() }.exceptionOrNull()
-        //THEN
+        // THEN
         assertEquals(expected, actual)
     }
 

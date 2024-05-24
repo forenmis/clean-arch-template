@@ -18,46 +18,46 @@ class CatRepositoryImplTest {
 
     @Test
     fun verifyGetList() = runTest {
-        //GIVEN
+        // GIVEN
         whenever(catService.getCats()).thenReturn(createListResp())
         val expected = createListResp()
-        //WHEN
+        // WHEN
         val actual = catRepository.getList()
-        //THEN
+        // THEN
         assertEquals(expected, actual)
     }
 
     @Test
     fun verifyGetFavorites() = runTest {
-        //GIVEN
+        // GIVEN
         whenever(catDao.getFavorites()).thenReturn(createListData())
         val expected = createListData()
-        //WHEN
+        // WHEN
         val actual = catRepository.getFavorites()
-        //THEN
+        // THEN
         assertEquals(expected, actual)
     }
 
     @Test
     fun verifyDeleteFromFavorites() = runTest {
-        //GIVEN
+        // GIVEN
         val id = "1"
         whenever(catDao.deleteFromFavorites(id)).thenReturn(Unit)
         val expected = Unit
-        //WHEN
+        // WHEN
         val actual = catRepository.deleteFromFavorites(id)
-        //THEN
+        // THEN
         assertEquals(expected, actual)
     }
 
     @Test
     fun verifyAddToFavorites() = runTest {
-        //GIVEN
+        // GIVEN
         whenever(catDao.addToFavorites(any())).thenReturn(Unit)
         val expected = Unit
-        //WHEN
+        // WHEN
         val actual = catRepository.addToFavorites(CatData("1", "1"))
-        //THEN
+        // THEN
         assertEquals(expected, actual)
     }
 

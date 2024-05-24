@@ -28,7 +28,6 @@ android {
         targetSdk = TARGET_SDK
         versionCode = VERSION_CODE
         versionName = VERSION_NAME
-
     }
 
     buildTypes {

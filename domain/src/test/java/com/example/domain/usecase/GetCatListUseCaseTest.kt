@@ -16,34 +16,34 @@ class GetCatListUseCaseTest {
 
     @Test
     fun verifyExecution() = runTest {
-        //GIVEN
+        // GIVEN
         whenever(catRepository.getList()).thenReturn(createList())
         val expected = listOf(CatModel("1", "1"))
-        //WHEN
+        // WHEN
         val actual = getCatListUseCase.execute()
-        //THEN
+        // THEN
         assertEquals(expected, actual)
     }
 
     @Test
     fun verifyEmptyList() = runTest {
-        //GIVEN
+        // GIVEN
         whenever(catRepository.getList()).thenReturn(emptyList())
         val expected = emptyList<CatResponse>()
-        //WHEN
+        // WHEN
         val actual = getCatListUseCase.execute()
-        //THEN
+        // THEN
         assertEquals(expected, actual)
     }
 
     @Test
     fun verifyException() = runTest {
-        //GIVEN
+        // GIVEN
         val expected = Throwable()
         whenever(catRepository.getList()).doAnswer { throw expected }
-        //WHEN
+        // WHEN
         val actual = runCatching { getCatListUseCase.execute() }.exceptionOrNull()
-        //THEN
+        // THEN
         assertEquals(expected, actual)
     }
 

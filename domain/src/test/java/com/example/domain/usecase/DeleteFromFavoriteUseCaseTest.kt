@@ -15,23 +15,23 @@ class DeleteFromFavoriteUseCaseTest {
 
     @Test
     fun verifyExecution() = runTest {
-        //GIVEN
+        // GIVEN
         whenever(catRepository.deleteFromFavorites(any())).thenReturn(Unit)
         val expected = Unit
-        //WHEN
+        // WHEN
         val actual = deleteFromFavoriteUseCase.execute("1")
-        //THEN
+        // THEN
         assertEquals(expected, actual)
     }
 
     @Test
     fun verifyExecutionException() = runTest {
-        //GIVEN
+        // GIVEN
         val expected = Throwable()
         whenever(catRepository.deleteFromFavorites(any())).doAnswer { throw expected }
-        //WHEN
+        // WHEN
         val actual = runCatching { deleteFromFavoriteUseCase.execute("1") }.exceptionOrNull()
-        //THEN
+        // THEN
         assertEquals(expected, actual)
     }
 }

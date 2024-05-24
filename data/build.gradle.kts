@@ -63,7 +63,6 @@ android {
     }
 }
 
-
 dependencies {
     implementation(project(":common"))
 
@@ -82,7 +81,7 @@ dependencies {
     implementation(libs.room.ktx)
     ksp(libs.room.compiler)
 
-    //test
+    // test
     testImplementation(libs.junit.jupiter.api)
     testRuntimeOnly(libs.junit.jupiter.engine)
     testImplementation(libs.kotlinx.coroutines.android)

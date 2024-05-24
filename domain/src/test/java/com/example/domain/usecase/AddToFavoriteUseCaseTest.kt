@@ -16,25 +16,25 @@ class AddToFavoriteUseCaseTest {
 
     @Test
     fun verifyExecution() = runTest {
-        //GIVEN
+        // GIVEN
         whenever(catRepository.addToFavorites(any())).thenReturn(Unit)
         val catModel = CatModel(id = "1", image = "1")
         val expected = Unit
-        //WHEN
+        // WHEN
         val actual = addToFavoriteUseCase.execute(catModel)
-        //THEN
+        // THEN
         assertEquals(expected, actual)
     }
 
     @Test
     fun verifyExecutionException() = runTest {
-        //GIVEN
+        // GIVEN
         val expected = Throwable()
         whenever(catRepository.addToFavorites(any())).doAnswer { throw expected }
         val catModel = CatModel(id = "1", image = "1")
-        //WHEN
+        // WHEN
         val actual = runCatching { addToFavoriteUseCase.execute(catModel) }.exceptionOrNull()
-        //THEN
+        // THEN
         assertEquals(expected, actual)
     }
 }
