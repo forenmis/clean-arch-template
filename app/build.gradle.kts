@@ -23,6 +23,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.cleanarchitecturetemplate"
+
         minSdk = MIN_SDK
         targetSdk = TARGET_SDK
         versionCode = VERSION_CODE
