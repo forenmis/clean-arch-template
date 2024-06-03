@@ -1,4 +1,4 @@
-package com.example.presentation.screens.homeScreen
+package com.example.presentation.screens.homescreen
 
 import com.example.presentation.core.BaseEffect
 import com.example.presentation.core.BaseEvent

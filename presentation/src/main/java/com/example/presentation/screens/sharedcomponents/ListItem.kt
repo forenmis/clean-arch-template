@@ -7,6 +7,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.testTag
 import coil.compose.AsyncImage
 import com.example.presentation.R
 import com.example.presentation.screens.retrofitscreen.entity.CatUi
@@ -18,7 +20,7 @@ internal fun ListItem(
     onAddToFavorite: (CatUi) -> Unit = {},
     onDeleteFromFavorite: (CatUi) -> Unit,
 ) {
-    Box(modifier = Modifier) {
+    Box(modifier = Modifier.semantics { this.testTag = "List item: ${catUi.id}" }) {
         AsyncImage(
             model = catUi.image,
             contentScale = ContentScale.FillWidth,
@@ -33,7 +35,7 @@ internal fun ListItem(
             isFavorite = isFavorite,
             onAddToFavorite = onAddToFavorite,
             onDeleteFromFavorite = onDeleteFromFavorite,
-            modifier = Modifier
+            modifier = Modifier.semantics { this.testTag = "Favorite icon: ${catUi.id}" }
         )
     }
 }

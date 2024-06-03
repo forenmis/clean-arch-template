@@ -1,4 +1,4 @@
-package com.example.presentation.screens.homeScreen
+package com.example.presentation.screens.homescreen
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -31,7 +31,6 @@ import com.example.presentation.utils.Dimens
 import com.example.presentation.utils.Palette
 import com.example.presentation.utils.composable.RequestNotificationPermissions
 
-@SuppressWarnings("UnusedParameter")
 @Composable
 fun HomeScreen(viewModel: HomeViewModel) {
     MaterialTheme {

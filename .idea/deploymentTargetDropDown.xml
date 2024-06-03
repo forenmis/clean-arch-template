@@ -18,6 +18,21 @@
           <timeTargetWasSelectedWithDropDown value="2024-04-01T08:15:51.556561Z" />
         </State>
       </entry>
+      <entry key="crashButtonIsDisplayed()">
+        <State />
+      </entry>
+      <entry key="favoritesImagesDisplayed()">
+        <State />
+      </entry>
+      <entry key="imagesDisplayed()">
+        <State />
+      </entry>
+      <entry key="imagesIsEmpty()">
+        <State />
+      </entry>
+      <entry key="refreshingDisplayed()">
+        <State />
+      </entry>
     </value>
   </component>
 </project>

@@ -18,6 +18,8 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.testTag
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.presentation.screens.retrofitscreen.entity.CatUi
@@ -56,7 +58,9 @@ private fun ScreenContent(
             .nestedScroll(refreshState.nestedScrollConnection)
     ) {
         LazyColumn(
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier
+                .fillMaxSize()
+                .semantics { this.testTag = "List images" },
             verticalArrangement = Arrangement.spacedBy(Dimens.BasePadding)
         ) {
             items(state.images) { catUi ->
@@ -74,7 +78,9 @@ private fun ScreenContent(
         }
 
         PullToRefreshContainer(
-            modifier = Modifier.align(Alignment.TopCenter),
+            modifier = Modifier
+                .align(Alignment.TopCenter)
+                .semantics { this.testTag = "Refresh images" },
             state = refreshState
         )
     }

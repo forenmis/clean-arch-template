@@ -1,4 +1,4 @@
-package com.example.presentation.screens.homeScreen
+package com.example.presentation.screens.homescreen
 
 import androidx.lifecycle.viewModelScope
 import com.example.common.logger.Logger

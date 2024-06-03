@@ -50,6 +50,8 @@ android {
 
     defaultConfig {
         minSdk = MIN_SDK
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     compileOptions {
@@ -92,6 +94,18 @@ dependencies {
     implementation(libs.accompanist.permissions)
 
     detektPlugins(libs.detekt.compose.rules)
+
+    // test
+    testImplementation(libs.junit.jupiter.api)
+    testRuntimeOnly(libs.junit.jupiter.engine)
+    testImplementation(libs.kotlinx.coroutines.android)
+    testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(libs.mockito.core)
+
+    androidTestImplementation(libs.android.test.compose)
+    debugImplementation(libs.ui.test.manifest)
+    androidTestImplementation(libs.mockito.kotlin)
+    androidTestImplementation(libs.dexmaker.mockito.inline.extended)
 }
 
 detekt {
