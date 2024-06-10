@@ -26,7 +26,7 @@ jobs:
       with:
         target: google_apis
         api-level: 34
-        arch: aarch64
+        arch: arm64-v8a
         script: ./gradlew connectedCheck
     - name: Archive APK artifact
       uses: actions/upload-artifact@v4.3.1
