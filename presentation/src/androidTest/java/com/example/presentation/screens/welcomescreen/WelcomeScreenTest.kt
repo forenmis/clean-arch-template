@@ -4,13 +4,11 @@ import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.assertIsEnabled
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithTag
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mockito
 
-@OptIn(ExperimentalCoroutinesApi::class)
 class WelcomeScreenTest {
     private val viewModel = Mockito.mock(WelcomeViewModel::class.java)
 
@@ -46,6 +44,7 @@ class WelcomeScreenTest {
 
     @Test
     fun catImagesIsDisplayed() {
+        composeTestRule.mainClock.advanceTimeBy(100)
         for (i in 1..2) {
             composeTestRule
                 .onNodeWithTag("Image cat $i")
@@ -55,6 +54,7 @@ class WelcomeScreenTest {
 
     @Test
     fun linkIsClickable() {
+        composeTestRule.mainClock.advanceTimeBy(100)
         composeTestRule
             .onNodeWithTag("Welcome link")
             .assertIsDisplayed()
