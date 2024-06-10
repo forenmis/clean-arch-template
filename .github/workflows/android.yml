@@ -30,7 +30,8 @@ jobs:
       uses: reactivecircus/android-emulator-runner@v2
       with:
         target: google_apis
-        api-level: 34
+        arch: x86_64
+        api-level: 33
         script: ./gradlew connectedCheck
     - name: Archive APK artifact
       uses: actions/upload-artifact@v4.3.1
