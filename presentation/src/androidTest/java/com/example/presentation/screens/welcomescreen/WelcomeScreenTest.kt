@@ -44,7 +44,6 @@ class WelcomeScreenTest {
 
     @Test
     fun catImagesIsDisplayed() {
-        composeTestRule.mainClock.advanceTimeBy(100)
         for (i in 1..2) {
             composeTestRule
                 .onNodeWithTag("Image cat $i")
@@ -54,7 +53,6 @@ class WelcomeScreenTest {
 
     @Test
     fun linkIsClickable() {
-        composeTestRule.mainClock.advanceTimeBy(100)
         composeTestRule
             .onNodeWithTag("Welcome link")
             .assertIsDisplayed()
