@@ -12,6 +12,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.testTag
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.presentation.R
@@ -40,12 +42,18 @@ private fun ScreenContent(state: RoomContracts.State, onEvent: (RoomContracts.Ev
             .background(Palette.LightPeach)
     ) {
         if (state.images.isEmpty()) {
-            Column(modifier = Modifier.fillMaxSize()) {
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .semantics { this.testTag = "Favorites is empty" }
+            ) {
                 Animation(resId = R.raw.empty_favorite)
             }
         } else {
             LazyColumn(
-                modifier = Modifier.fillMaxSize(),
+                modifier = Modifier
+                    .fillMaxSize()
+                    .semantics { this.testTag = "List images" },
                 verticalArrangement = Arrangement.spacedBy(Dimens.BasePadding)
             ) {
                 items(state.images) { catUi ->

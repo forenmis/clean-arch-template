@@ -103,9 +103,12 @@ dependencies {
     testImplementation(libs.mockito.core)
 
     androidTestImplementation(libs.android.test.compose)
-    debugImplementation(libs.ui.test.manifest)
     androidTestImplementation(libs.mockito.kotlin)
     androidTestImplementation(libs.dexmaker.mockito.inline.extended)
+    androidTestImplementation(libs.hilt.android.testing)
+    kspAndroidTest(libs.hilt.compiler)
+
+    debugImplementation(libs.ui.test.manifest)
 }
 
 detekt {

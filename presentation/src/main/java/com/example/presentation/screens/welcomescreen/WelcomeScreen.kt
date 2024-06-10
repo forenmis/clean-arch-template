@@ -16,6 +16,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.testTag
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.presentation.BuildConfig
@@ -49,13 +51,15 @@ private fun ScreenContent() {
                     .height(Dimens.WelcomeAnimationSize)
                     .padding(Dimens.BasePadding)
                     .align(Alignment.CenterHorizontally)
+                    .semantics { this.testTag = "Welcome image" }
             )
 
             Text(
                 text = stringResource(id = R.string.welcome_description_part1),
                 modifier = Modifier
                     .align(Alignment.CenterHorizontally)
-                    .padding(Dimens.BasePadding),
+                    .padding(Dimens.BasePadding)
+                    .semantics { this.testTag = "Welcome text part 1" },
                 fontStyle = FontStyle.Italic,
                 fontSize = TextSizes.BaseTextSize
             )
@@ -71,7 +75,8 @@ private fun ScreenContent() {
                 text = stringResource(id = R.string.welcome_description_part3),
                 modifier = Modifier
                     .align(Alignment.CenterHorizontally)
-                    .padding(Dimens.BasePadding),
+                    .padding(Dimens.BasePadding)
+                    .semantics { this.testTag = "Welcome text part 2" },
                 fontStyle = FontStyle.Italic,
                 fontSize = TextSizes.BaseTextSize
             )
@@ -86,7 +91,8 @@ private fun ScreenContent() {
                 text = stringResource(id = R.string.welcome),
                 modifier = Modifier
                     .align(Alignment.CenterHorizontally)
-                    .padding(Dimens.WelcomeHeaderPadding),
+                    .padding(Dimens.WelcomeHeaderPadding)
+                    .semantics { this.testTag = "Welcome text" },
                 fontStyle = FontStyle.Italic,
                 fontSize = TextSizes.HeaderTextSize
             )
@@ -95,7 +101,8 @@ private fun ScreenContent() {
             Image(
                 modifier = Modifier
                     .height(Dimens.WelcomeImageSize)
-                    .fillMaxWidth(),
+                    .fillMaxWidth()
+                    .semantics { this.testTag = "Image cat 1" },
                 painter = painterResource(id = R.drawable.ic_cat_type2),
                 contentDescription = null
             )
@@ -104,7 +111,8 @@ private fun ScreenContent() {
                 text = stringResource(id = R.string.welcome_description_part2),
                 modifier = Modifier
                     .align(Alignment.CenterHorizontally)
-                    .padding(Dimens.BasePadding),
+                    .padding(Dimens.BasePadding)
+                    .semantics { this.testTag = "Welcome text part 3" },
                 fontStyle = FontStyle.Italic,
                 fontSize = TextSizes.BaseTextSize
             )
@@ -114,12 +122,14 @@ private fun ScreenContent() {
             Image(
                 modifier = Modifier
                     .height(Dimens.WelcomeImageSize)
-                    .fillMaxWidth(),
+                    .fillMaxWidth()
+                    .semantics { this.testTag = "Image cat 2" },
                 painter = painterResource(id = R.drawable.ic_cat_type1),
                 contentDescription = null
             )
 
             LinkText(
+                modifier = Modifier.semantics { this.testTag = "Welcome link" },
                 text = stringResource(id = R.string.tap_to_read_more),
                 link = BuildConfig.README
             )
