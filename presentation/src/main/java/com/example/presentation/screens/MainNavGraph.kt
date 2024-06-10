@@ -1,6 +1,9 @@
 package com.example.presentation.screens
 
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.testTag
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
@@ -11,7 +14,10 @@ import com.example.presentation.utils.Routes
 @Composable
 fun MainNavGraph(navController: NavHostController) {
     NavHost(
+        modifier = Modifier.semantics { this.testTag = "nav graph" },
         navController = navController,
         startDestination = Routes.HOME
-    ) { composable(Routes.HOME) { HomeScreen(viewModel = hiltViewModel()) } }
+    ) {
+        composable(Routes.HOME) { HomeScreen(viewModel = hiltViewModel()) }
+    }
 }
