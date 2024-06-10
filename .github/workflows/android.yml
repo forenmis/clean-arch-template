@@ -29,13 +29,11 @@ jobs:
       run: ./gradlew assembleDebug
     - name: Unit tests
       run: ./gradlew test
-    - name: Android Emulator Runner Without SDK Setup
-      uses: RandyLutcavich/android-emulator-runner-without-sdk-setup@v1.0.3
     - name: Instrumental tests
       uses: reactivecircus/android-emulator-runner@v2
       with:
-        script: ./gradlew connectedAndroidTest
-        apiLevel: 34
+        api-level: 29
+        script: ./gradlew connectedCheck
     - name: Archive APK artifact
       uses: actions/upload-artifact@v4.3.1
       with:
