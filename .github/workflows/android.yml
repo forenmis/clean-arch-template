@@ -34,7 +34,6 @@ jobs:
     - name: Instrumental tests
       uses: reactivecircus/android-emulator-runner@v2
       with:
-        api-level: 34
         script: ./gradlew connectedCheck
     - name: Archive APK artifact
       uses: actions/upload-artifact@v4.3.1
