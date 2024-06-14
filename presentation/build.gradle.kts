@@ -51,7 +51,7 @@ android {
     defaultConfig {
         minSdk = MIN_SDK
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "com.example.presentation.HiltTestRunner"
     }
 
     compileOptions {
@@ -103,12 +103,12 @@ dependencies {
     testImplementation(libs.mockito.core)
 
     androidTestImplementation(libs.android.test.compose)
+    androidTestImplementation(libs.navigation.testing)
     androidTestImplementation(libs.mockito.kotlin)
     androidTestImplementation(libs.dexmaker.mockito.inline.extended)
+    androidTestImplementation(libs.runner)
     androidTestImplementation(libs.hilt.android.testing)
     kspAndroidTest(libs.hilt.compiler)
-
-    debugImplementation(libs.ui.test.manifest)
 }
 
 detekt {

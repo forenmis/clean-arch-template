@@ -2,8 +2,8 @@ package com.example.presentation.screens.welcomescreen
 
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.assertIsEnabled
-import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithTag
+import com.example.presentation.templateComposeRule
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -13,7 +13,7 @@ class WelcomeScreenTest {
     private val viewModel = Mockito.mock(WelcomeViewModel::class.java)
 
     @get:Rule
-    val composeTestRule = createComposeRule()
+    val composeTestRule = templateComposeRule()
 
     @Before
     fun setup() {

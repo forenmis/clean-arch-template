@@ -14,10 +14,13 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.testTag
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
@@ -32,9 +35,12 @@ import com.example.presentation.utils.Palette
 import com.example.presentation.utils.composable.RequestNotificationPermissions
 
 @Composable
-fun HomeScreen(viewModel: HomeViewModel) {
+fun HomeScreen(
+    viewModel: HomeViewModel,
+    navController: NavHostController = rememberNavController(),
+) {
     MaterialTheme {
-        ScreenContent()
+        ScreenContent(navController)
     }
 
     RequestNotificationPermissions(
@@ -45,8 +51,7 @@ fun HomeScreen(viewModel: HomeViewModel) {
 }
 
 @Composable
-private fun ScreenContent() {
-    val bottomBarNavController = rememberNavController()
+private fun ScreenContent(bottomBarNavController: NavHostController) {
     val screenRoutes = BottomRoute.all()
     Scaffold(bottomBar = {
         NavigationBar(containerColor = Palette.Yellow) {
@@ -56,6 +61,7 @@ private fun ScreenContent() {
                 val isSelected =
                     currentDestination?.hierarchy?.any { it.route == screen.route } == true
                 NavigationBarItem(
+                    modifier = Modifier.semantics { this.testTag = screen.route },
                     colors = NavigationBarItemDefaults.colors(
                         indicatorColor = Palette.Yellow
                     ),
@@ -103,5 +109,5 @@ private fun ScreenContent() {
 @Preview(showBackground = true)
 @Composable
 private fun ScreenPreview() {
-    ScreenContent()
+    ScreenContent(bottomBarNavController = rememberNavController())
 }

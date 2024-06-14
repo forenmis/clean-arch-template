@@ -5,7 +5,6 @@ package com.example.presentation.screens.retrofiscreen
 import androidx.compose.ui.test.assertCountEquals
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.assertValueEquals
-import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onChildren
 import androidx.compose.ui.test.onNodeWithTag
 import com.example.presentation.R
@@ -13,6 +12,7 @@ import com.example.presentation.screens.retrofitscreen.RetrofitContracts
 import com.example.presentation.screens.retrofitscreen.RetrofitScreen
 import com.example.presentation.screens.retrofitscreen.RetrofitViewModel
 import com.example.presentation.screens.retrofitscreen.entity.CatUi
+import com.example.presentation.templateComposeRule
 import kotlinx.coroutines.flow.MutableStateFlow
 import org.junit.Rule
 import org.junit.Test
@@ -23,7 +23,7 @@ class RetrofitScreenTest {
     private val viewModel = Mockito.mock(RetrofitViewModel::class.java)
 
     @get:Rule
-    val composeTestRule = createComposeRule()
+    val composeTestRule = templateComposeRule()
 
     @Test
     fun imagesDisplayed() {
