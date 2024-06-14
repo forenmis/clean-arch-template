@@ -12,9 +12,9 @@ import com.example.presentation.screens.homescreen.HomeScreen
 import com.example.presentation.utils.Routes
 
 @Composable
-fun MainNavGraph(navController: NavHostController) {
+fun MainNavGraph(navController: NavHostController, modifier: Modifier = Modifier) {
     NavHost(
-        modifier = Modifier.semantics { this.testTag = "nav graph" },
+        modifier = modifier.semantics { this.testTag = "nav graph" },
         navController = navController,
         startDestination = Routes.HOME
     ) {
