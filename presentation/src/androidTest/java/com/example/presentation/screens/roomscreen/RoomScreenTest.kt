@@ -5,20 +5,26 @@ import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.assertValueEquals
 import androidx.compose.ui.test.onChildren
 import androidx.compose.ui.test.onNodeWithTag
+import com.example.presentation.DefaultTestRules
 import com.example.presentation.R
 import com.example.presentation.screens.retrofitscreen.entity.CatUi
-import com.example.presentation.templateComposeRule
+import dagger.hilt.android.testing.HiltAndroidTest
 import kotlinx.coroutines.flow.MutableStateFlow
-import org.junit.Rule
+import org.junit.Before
 import org.junit.Test
 import org.mockito.Mockito
 import org.mockito.kotlin.whenever
 
-class RoomScreenTest {
+@HiltAndroidTest
+class RoomScreenTest : DefaultTestRules() {
     private val viewModel = Mockito.mock(RoomViewModel::class.java)
 
-    @get:Rule
-    val composeTestRule = templateComposeRule()
+    @Before
+    fun setup() {
+        composeTestRule.mainClock.autoAdvance = false
+        // Disable Lottie animation
+        // (if you want to test Lottie use composeTestRule.mainClock.advanceTimeBy($milliseconds))
+    }
 
     @Test
     fun imagesDisplayed() {

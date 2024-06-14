@@ -3,17 +3,15 @@ package com.example.presentation.screens.welcomescreen
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.assertIsEnabled
 import androidx.compose.ui.test.onNodeWithTag
-import com.example.presentation.templateComposeRule
+import com.example.presentation.DefaultTestRules
+import dagger.hilt.android.testing.HiltAndroidTest
 import org.junit.Before
-import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mockito
 
-class WelcomeScreenTest {
+@HiltAndroidTest
+class WelcomeScreenTest : DefaultTestRules() {
     private val viewModel = Mockito.mock(WelcomeViewModel::class.java)
-
-    @get:Rule
-    val composeTestRule = templateComposeRule()
 
     @Before
     fun setup() {

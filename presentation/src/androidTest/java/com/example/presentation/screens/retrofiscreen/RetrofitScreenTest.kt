@@ -7,23 +7,21 @@ import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.assertValueEquals
 import androidx.compose.ui.test.onChildren
 import androidx.compose.ui.test.onNodeWithTag
+import com.example.presentation.DefaultTestRules
 import com.example.presentation.R
 import com.example.presentation.screens.retrofitscreen.RetrofitContracts
 import com.example.presentation.screens.retrofitscreen.RetrofitScreen
 import com.example.presentation.screens.retrofitscreen.RetrofitViewModel
 import com.example.presentation.screens.retrofitscreen.entity.CatUi
-import com.example.presentation.templateComposeRule
+import dagger.hilt.android.testing.HiltAndroidTest
 import kotlinx.coroutines.flow.MutableStateFlow
-import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mockito
 import org.mockito.kotlin.whenever
 
-class RetrofitScreenTest {
+@HiltAndroidTest
+class RetrofitScreenTest : DefaultTestRules() {
     private val viewModel = Mockito.mock(RetrofitViewModel::class.java)
-
-    @get:Rule
-    val composeTestRule = templateComposeRule()
 
     @Test
     fun imagesDisplayed() {

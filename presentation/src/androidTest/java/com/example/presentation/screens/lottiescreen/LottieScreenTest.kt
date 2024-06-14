@@ -3,17 +3,15 @@ package com.example.presentation.screens.lottiescreen
 import androidx.compose.ui.test.assertHasClickAction
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.onNodeWithText
-import com.example.presentation.templateComposeRule
+import com.example.presentation.DefaultTestRules
+import dagger.hilt.android.testing.HiltAndroidTest
 import org.junit.Before
-import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mockito.mock
 
-class LottieScreenTest {
+@HiltAndroidTest
+class LottieScreenTest : DefaultTestRules() {
     private val viewModel = mock(LottieViewModel::class.java)
-
-    @get:Rule
-    val composeTestRule = templateComposeRule()
 
     @Before
     fun setup() {
