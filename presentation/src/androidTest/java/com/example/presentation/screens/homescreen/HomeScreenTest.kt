@@ -42,7 +42,6 @@ class HomeScreenTest {
         }
     }
 
-
     @Test
     fun verifyStartDestination() {
         val expected = BottomRoute.Welcome.route
