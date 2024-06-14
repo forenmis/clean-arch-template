@@ -2,6 +2,7 @@ package com.example.presentation.screens.welcomescreen
 
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.assertIsEnabled
+import androidx.compose.ui.test.isDisplayed
 import androidx.compose.ui.test.onNodeWithTag
 import com.example.presentation.DefaultTestRules
 import dagger.hilt.android.testing.HiltAndroidTest
@@ -42,7 +43,10 @@ class WelcomeScreenTest : DefaultTestRules() {
 
     @Test
     fun catImagesIsDisplayed() {
-        composeTestRule.waitForIdle()
+        composeTestRule.waitUntil {
+            composeTestRule.onNodeWithTag("Welcome screen content")
+                .isDisplayed()
+        }
         for (i in 1..2) {
             composeTestRule
                 .onNodeWithTag("Image cat $i")
@@ -52,7 +56,10 @@ class WelcomeScreenTest : DefaultTestRules() {
 
     @Test
     fun linkIsClickable() {
-        composeTestRule.waitForIdle()
+        composeTestRule.waitUntil {
+            composeTestRule.onNodeWithTag("Welcome screen content")
+                .isDisplayed()
+        }
         composeTestRule
             .onNodeWithTag("Welcome link")
             .assertIsDisplayed()

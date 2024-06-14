@@ -37,7 +37,7 @@ fun WelcomeScreen(viewModel: WelcomeViewModel) {
 @SuppressWarnings("LongMethod")
 @Composable
 private fun ScreenContent() {
-    Row {
+    Row(modifier = Modifier.semantics { this.testTag = "Welcome screen content" }) {
         Column(
             modifier = Modifier
                 .weight(Weights.HALF)
