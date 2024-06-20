@@ -28,7 +28,7 @@ class HomeViewModel @Inject constructor(private val logger: Logger) : BaseViewMo
     }
 
     private fun onNotificationPermissionGranted() = viewModelScope.launch {
-        val token = Firebase.messaging.token.await()
+        val token = runCatching { Firebase.messaging.token.await() }.getOrNull()
         logger.i("Token : $token")
     }
 }

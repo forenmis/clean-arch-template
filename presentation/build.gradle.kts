@@ -1,3 +1,5 @@
+@file:Suppress("UnstableApiUsage")
+
 import Constants.COMPILE_SDK
 import Constants.JVM_TARGET
 import Constants.KOTLIN_COMPILER_EXTENSION_VERSION
@@ -107,6 +109,7 @@ dependencies {
     androidTestImplementation(libs.mockito.kotlin)
     androidTestImplementation(libs.dexmaker.mockito.inline.extended)
     androidTestImplementation(libs.runner)
+    androidTestImplementation(platform(libs.firebase.bom))
     androidTestImplementation(libs.hilt.android.testing)
     kspAndroidTest(libs.hilt.compiler)
 }

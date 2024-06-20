@@ -2,9 +2,6 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
-      <entry key="HomeScreenTest">
-        <State />
-      </entry>
       <entry key="MainNavGraphTest">
         <State />
       </entry>
@@ -31,6 +28,9 @@
         <State />
       </entry>
       <entry key="verifyStartDestination()">
+        <State />
+      </entry>
+      <entry key="welcomeImageIsDisplayed()">
         <State />
       </entry>
     </value>
