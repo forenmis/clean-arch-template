@@ -21,10 +21,11 @@ class LottieScreenTest : DefaultTestRules() {
 
     @Test
     fun crashButtonIsDisplayed() = runTest {
-        composeTestRule.awaitIdle()
-        composeTestRule
-            .onNodeWithText("Crash")
-            .assertIsDisplayed()
-            .assertHasClickAction()
+        composeTestRule.run {
+            awaitIdle()
+            onNodeWithText("Crash")
+                .assertIsDisplayed()
+                .assertHasClickAction()
+        }
     }
 }
