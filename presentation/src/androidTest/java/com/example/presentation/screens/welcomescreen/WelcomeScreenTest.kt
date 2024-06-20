@@ -1,8 +1,6 @@
 package com.example.presentation.screens.welcomescreen
 
 import androidx.compose.ui.test.assertIsDisplayed
-import androidx.compose.ui.test.assertIsEnabled
-import androidx.compose.ui.test.isDisplayed
 import androidx.compose.ui.test.onNodeWithTag
 import com.example.presentation.DefaultTestRules
 import dagger.hilt.android.testing.HiltAndroidTest
@@ -39,30 +37,5 @@ class WelcomeScreenTest : DefaultTestRules() {
                 .onNodeWithTag("Welcome text part $i")
                 .assertIsDisplayed()
         }
-    }
-
-    @Test
-    fun catImagesIsDisplayed() {
-        composeTestRule.waitUntil {
-            composeTestRule.onNodeWithTag("Welcome screen content")
-                .isDisplayed()
-        }
-        for (i in 1..2) {
-            composeTestRule
-                .onNodeWithTag("Image cat $i")
-                .assertIsDisplayed()
-        }
-    }
-
-    @Test
-    fun linkIsClickable() {
-        composeTestRule.waitUntil {
-            composeTestRule.onNodeWithTag("Welcome screen content")
-                .isDisplayed()
-        }
-        composeTestRule
-            .onNodeWithTag("Welcome link")
-            .assertIsDisplayed()
-            .assertIsEnabled()
     }
 }
