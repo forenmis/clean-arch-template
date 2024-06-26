@@ -9,6 +9,7 @@ compose-bom = "2024.06.00"
 nav-version = "2.7.7"
 lottie = "6.4.0"
 lottie-compose = "4.0.0"
+splashscreen = "1.2.0-alpha01"
 room = "2.6.1"
 
 okhttp-bom = "4.12.0"
@@ -53,6 +54,7 @@ navigation-compose = { group = "androidx.navigation", name = "navigation-compose
 navigation-testing = { group = "androidx.navigation", name = "navigation-testing", version.ref = "nav-version" }
 lottie = { group = "com.airbnb.android", name = "lottie", version.ref = "lottie" }
 lottie-compose = { group = "com.airbnb.android", name = "lottie-compose", version.ref = "lottie-compose" }
+splashscreen = {group = "androidx.core", name = "core-splashscreen", version.ref = "splashscreen"}
 
 okhttp-bom = { group = "com.squareup.okhttp3", name = "okhttp-bom", version.ref = "okhttp-bom" }
 okhttp = { group = "com.squareup.okhttp3", name = "okhttp" }
