@@ -4,4 +4,15 @@
     <style name="Theme" parent="Theme.Material3.DayNight" />
 
     <style name="Theme.CleanArchitectureTemplate" />
+
+    <style name="Theme.CleanArchitectureTemplate.Starting" parent="Theme.SplashScreen">
+        <!-- Set the splash screen background to black -->
+        <item name="windowSplashScreenBackground">@null</item>
+        <!-- Use windowSplashScreenAnimatedIcon to add a drawable or an animated
+             drawable. -->
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_splash_animation</item>
+        <item name="windowSplashScreenAnimationDuration">4000</item>
+        <!-- Set the theme of the Activity that follows your splash screen. -->
+        <item name="postSplashScreenTheme">@style/Theme.CleanArchitectureTemplate</item>
+    </style>
 </resources>
