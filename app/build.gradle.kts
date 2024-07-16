@@ -18,16 +18,26 @@ plugins {
 }
 
 android {
-    namespace = "com.example.cleanarchitectiretemplate"
+    namespace = "com.chiswintern.cleanarchitecturetemplate"
     compileSdk = COMPILE_SDK
 
     defaultConfig {
-        applicationId = "com.example.cleanarchitecturetemplate"
+        applicationId = "com.chiswintern.cleanarchitecturetemplate"
 
         minSdk = MIN_SDK
         targetSdk = TARGET_SDK
         versionCode = VERSION_CODE
         versionName = VERSION_NAME
+    }
+
+    signingConfigs {
+        create("release") {
+            keyAlias = "clean"
+            keyPassword = "123456"
+            storeFile = file("$rootDir/keystores/release.keystore")
+            storePassword = "123456"
+        }
+
     }
 
     buildTypes {
@@ -40,6 +50,7 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            signingConfig = signingConfigs.getByName("release")
             manifestPlaceholders["crashlyticsCollectionEnabled"] = true
         }
         create("qa") {
@@ -47,6 +58,7 @@ android {
             manifestPlaceholders["crashlyticsCollectionEnabled"] = true
         }
     }
+
     compileOptions {
         sourceCompatibility = SOURCE_COMPATIBILITY
         targetCompatibility = TARGET_COMPATIBILITY
