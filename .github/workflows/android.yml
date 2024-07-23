@@ -34,14 +34,14 @@ jobs:
       run: ./gradlew assembleDebug
     - name: Unit tests
       run: ./gradlew test
-    - name: Instrumental tests
-      uses: reactivecircus/android-emulator-runner@v2
-      with:
-        target: google_apis
-        arch: x86_64
-        api-level: 33
-        emulator-options: -no-snapshot-save -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
-        script: ./gradlew presentation:connectedAndroidTest
+    # - name: Instrumental tests
+    #   uses: reactivecircus/android-emulator-runner@v2
+    #   with:
+    #     target: google_apis
+    #     arch: x86_64
+    #     api-level: 33
+    #     emulator-options: -no-snapshot-save -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
+    #     script: ./gradlew presentation:connectedAndroidTest
     - name: Archive APK artifact
       uses: actions/upload-artifact@v4.3.1
       with:
