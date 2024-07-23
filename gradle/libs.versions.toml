@@ -27,12 +27,13 @@ leakcanary-android = "2.14"
 timber = "5.0.1"
 
 firebase-bom = "33.1.2"
+play-services-ads = "23.2.0"
 google-services = "4.4.2"
 crashlytics = "3.0.2"
 accompanist-permissions = "0.35.0-alpha"
 
 junit-jupiter = "5.10.0"
-junit5 =  "1.10.0.0"
+junit5 = "1.10.0.0"
 kotlinx-coroutines = "1.7.3"
 mockito-kotlin = "5.3.1"
 mockito-core = "5.12.0"
@@ -54,7 +55,7 @@ navigation-compose = { group = "androidx.navigation", name = "navigation-compose
 navigation-testing = { group = "androidx.navigation", name = "navigation-testing", version.ref = "nav-version" }
 lottie = { group = "com.airbnb.android", name = "lottie", version.ref = "lottie" }
 lottie-compose = { group = "com.airbnb.android", name = "lottie-compose", version.ref = "lottie-compose" }
-splashscreen = {group = "androidx.core", name = "core-splashscreen", version.ref = "splashscreen"}
+splashscreen = { group = "androidx.core", name = "core-splashscreen", version.ref = "splashscreen" }
 
 okhttp-bom = { group = "com.squareup.okhttp3", name = "okhttp-bom", version.ref = "okhttp-bom" }
 okhttp = { group = "com.squareup.okhttp3", name = "okhttp" }
@@ -84,17 +85,19 @@ firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics
 firebase-messaging = { group = "com.google.firebase", name = "firebase-messaging-ktx" }
 accompanist-permissions = { group = "com.google.accompanist", name = "accompanist-permissions", version.ref = "accompanist-permissions" }
 
+play-services-ads = { group = "com.google.android.gms", name = "play-services-ads", version.ref = "play-services-ads" }
+
 junit-jupiter-api = { group = "org.junit.jupiter", name = "junit-jupiter-api", version.ref = "junit-jupiter" }
-junit-jupiter-engine = {group = "org.junit.jupiter", name = "junit-jupiter-engine", version.ref = "junit-jupiter"}
-android-test-compose = {group = "androidx.compose.ui", name = "ui-test-junit4"}
+junit-jupiter-engine = { group = "org.junit.jupiter", name = "junit-jupiter-engine", version.ref = "junit-jupiter" }
+android-test-compose = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 runner = { group = "androidx.test", name = "runner", version.ref = "runner" }
 
 
-kotlinx-coroutines-android = {group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android",version.ref  ="kotlinx-coroutines" }
-kotlinx-coroutines-test = {group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test",version.ref  ="kotlinx-coroutines" }
+kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlinx-coroutines" }
+kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "kotlinx-coroutines" }
 
-mockito-kotlin = {group = "org.mockito.kotlin", name = "mockito-kotlin", version.ref = "mockito-kotlin"}
-mockito-core = {group = "org.mockito", name = "mockito-core", version.ref = "mockito-core"}
+mockito-kotlin = { group = "org.mockito.kotlin", name = "mockito-kotlin", version.ref = "mockito-kotlin" }
+mockito-core = { group = "org.mockito", name = "mockito-core", version.ref = "mockito-core" }
 dexmaker-mockito-inline-extended = { group = "com.linkedin.dexmaker", name = "dexmaker-mockito-inline-extended", version.ref = "dexmaker-mockito-inline-extended" }
 
 [plugins]
@@ -109,4 +112,4 @@ room = { id = "androidx.room", version.ref = "room" }
 
 google-services = { id = "com.google.gms.google-services", version.ref = "google-services" }
 crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "crashlytics" }
-junit5 = {id = "de.mannodermaus.android-junit5", version.ref = "junit5"}
+junit5 = { id = "de.mannodermaus.android-junit5", version.ref = "junit5" }

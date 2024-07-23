@@ -28,6 +28,8 @@ android {
         targetSdk = TARGET_SDK
         versionCode = VERSION_CODE
         versionName = VERSION_NAME
+
+        manifestPlaceholders["adsApplicationId"] = "ca-app-pub-4286207698894720~2994722905"
     }
 
     signingConfigs {
@@ -37,7 +39,6 @@ android {
             storeFile = file("$rootDir/keystores/release.keystore")
             storePassword = "123456"
         }
-
     }
 
     buildTypes {
@@ -84,4 +85,6 @@ dependencies {
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.crashlytics)
     implementation(libs.firebase.analytics)
+
+    implementation(libs.play.services.ads)
 }

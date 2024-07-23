@@ -54,6 +54,12 @@ android {
         minSdk = MIN_SDK
 
         testInstrumentationRunner = "com.example.presentation.HiltTestRunner"
+
+        buildConfigField(
+            "String",
+            "BANNER_AD_UNIT_ID",
+            "\"ca-app-pub-4286207698894720/5710469862\""
+        )
     }
 
     compileOptions {
@@ -95,6 +101,8 @@ dependencies {
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.messaging)
     implementation(libs.accompanist.permissions)
+
+    implementation(libs.play.services.ads)
 
     detektPlugins(libs.detekt.compose.rules)
 
