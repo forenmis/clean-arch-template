@@ -1,8 +1,10 @@
 package com.example.presentation.screens.roomscreen
 
+import android.app.Activity
 import androidx.lifecycle.viewModelScope
 import com.example.domain.usecase.DeleteFromFavoriteUseCase
 import com.example.domain.usecase.GetFavoriteCatsUseCase
+import com.example.presentation.ads.AdsHelper
 import com.example.presentation.core.BaseViewModel
 import com.example.presentation.mapper.toCatUi
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -13,6 +15,7 @@ import javax.inject.Inject
 class RoomViewModel @Inject constructor(
     private val getFavoriteCatsUseCase: GetFavoriteCatsUseCase,
     private val deleteFromFavoriteUseCase: DeleteFromFavoriteUseCase,
+    private val adsHelper: AdsHelper,
 ) : BaseViewModel<RoomContracts.State, RoomContracts.Event, RoomContracts.Effect>(
     RoomContracts.State()
 ) {
@@ -24,6 +27,8 @@ class RoomViewModel @Inject constructor(
                 deleteFromFavorite(event.id)
                 load()
             }
+
+            is RoomContracts.Event.OnAdsClick -> showInterstitialAds(event.activity)
         }
     }
 
@@ -35,5 +40,9 @@ class RoomViewModel @Inject constructor(
 
     private fun deleteFromFavorite(id: String) = viewModelScope.launch {
         deleteFromFavoriteUseCase.execute(id)
+    }
+
+    private fun showInterstitialAds(activity: Activity) {
+        adsHelper.interstitialAd(activity)
     }
 }

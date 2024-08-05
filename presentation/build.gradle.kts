@@ -60,6 +60,11 @@ android {
             "BANNER_AD_UNIT_ID",
             "\"ca-app-pub-4286207698894720/5710469862\""
         )
+        buildConfigField(
+            "String",
+            "INTERSTITIAL_AD_UNIT_ID",
+            "\"ca-app-pub-4286207698894720/2542380463\""
+        )
     }
 
     compileOptions {
