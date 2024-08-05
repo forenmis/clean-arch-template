@@ -16,7 +16,7 @@ import com.example.presentation.R
 import com.example.presentation.screens.sharedcomponents.Animation
 import com.example.presentation.utils.Dimens
 import com.example.presentation.utils.Palette
-import com.example.presentation.utils.composable.ComposeAdsView
+import com.example.presentation.utils.composable.ComposeBannerAdsView
 
 @SuppressWarnings("UnusedParameter")
 @Composable
@@ -35,7 +35,7 @@ private fun ScreenContent() {
     ) {
         Animation(resId = R.raw.cat)
 
-        ComposeAdsView(
+        ComposeBannerAdsView(
             modifier = Modifier
                 .fillMaxWidth()
                 .align(Alignment.TopCenter)

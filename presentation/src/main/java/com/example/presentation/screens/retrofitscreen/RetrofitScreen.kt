@@ -6,8 +6,8 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.pulltorefresh.PullToRefreshContainer
@@ -27,6 +27,7 @@ import com.example.presentation.screens.sharedcomponents.ListItem
 import com.example.presentation.utils.Dimens
 import com.example.presentation.utils.Palette
 import com.example.presentation.utils.PreviewParams
+import com.example.presentation.utils.composable.ComposeNativeAdsView
 
 @Composable
 fun RetrofitScreen(viewModel: RetrofitViewModel) {
@@ -63,17 +64,30 @@ private fun ScreenContent(
                 .semantics { this.testTag = "List images" },
             verticalArrangement = Arrangement.spacedBy(Dimens.BasePadding)
         ) {
-            items(state.images) { catUi ->
-                ListItem(
-                    catUi = catUi,
-                    isFavorite = catUi.isFavorite,
-                    onAddToFavorite = { onEvent(RetrofitContracts.Event.OnAddToFavorite(it)) },
-                    onDeleteFromFavorite = {
-                        onEvent(
-                            RetrofitContracts.Event.OnDeleteFromFavorite(it.id)
+            state.images.forEachIndexed { index, catUi ->
+
+                item {
+                    if (index == AD) {
+                        ComposeNativeAdsView(modifier = Modifier.fillMaxWidth())
+                    } else {
+                        ListItem(
+                            catUi = catUi,
+                            isFavorite = catUi.isFavorite,
+                            onAddToFavorite = {
+                                onEvent(
+                                    RetrofitContracts.Event.OnAddToFavorite(
+                                        it
+                                    )
+                                )
+                            },
+                            onDeleteFromFavorite = {
+                                onEvent(
+                                    RetrofitContracts.Event.OnDeleteFromFavorite(it.id)
+                                )
+                            }
                         )
                     }
-                )
+                }
             }
         }
 
@@ -112,3 +126,5 @@ private fun ItemPreview() {
         )
     }
 }
+
+private const val AD = 2

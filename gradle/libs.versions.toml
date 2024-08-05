@@ -9,6 +9,7 @@ compose-bom = "2024.06.00"
 nav-version = "2.7.7"
 lottie = "6.4.0"
 lottie-compose = "4.0.0"
+ui-viewbinding = "1.6.8"
 splashscreen = "1.2.0-alpha01"
 room = "2.6.1"
 
@@ -99,6 +100,7 @@ kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-cor
 mockito-kotlin = { group = "org.mockito.kotlin", name = "mockito-kotlin", version.ref = "mockito-kotlin" }
 mockito-core = { group = "org.mockito", name = "mockito-core", version.ref = "mockito-core" }
 dexmaker-mockito-inline-extended = { group = "com.linkedin.dexmaker", name = "dexmaker-mockito-inline-extended", version.ref = "dexmaker-mockito-inline-extended" }
+ui-viewbinding = { group = "androidx.compose.ui", name = "ui-viewbinding", version.ref = "ui-viewbinding" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
