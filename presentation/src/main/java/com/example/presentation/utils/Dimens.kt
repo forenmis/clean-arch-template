@@ -10,4 +10,6 @@ object Dimens {
     val WelcomeImageSize = BottomNavigationItemSize
     val WelcomeHeaderPadding = BottomNavigationItemSize
     val WelcomeAnimationSize = 130.dp
+
+    const val HalfWeight = 0.5F
 }

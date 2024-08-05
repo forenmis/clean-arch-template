@@ -1,5 +1,6 @@
 package com.example.presentation.screens.roomscreen
 
+import android.app.Activity
 import com.example.presentation.core.BaseEffect
 import com.example.presentation.core.BaseEvent
 import com.example.presentation.core.BaseState
@@ -14,6 +15,7 @@ class RoomContracts {
     sealed interface Event : BaseEvent {
         data object OnLoad : Event
         data class OnDelete(val id: String) : Event
+        data class OnAdsClick(val activity: Activity) : Event
     }
 
     sealed interface Effect : BaseEffect
