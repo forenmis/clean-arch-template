@@ -22,6 +22,7 @@ android {
     buildFeatures {
         buildConfig = true
         compose = true
+        viewBinding = true
     }
     buildTypes {
         debug {
@@ -65,6 +66,11 @@ android {
             "INTERSTITIAL_AD_UNIT_ID",
             "\"ca-app-pub-4286207698894720/2542380463\""
         )
+        buildConfigField(
+            "String",
+            "NATIVE_AD_UNIT_ID",
+            "\"ca-app-pub-4286207698894720/2574740876\""
+        )
     }
 
     compileOptions {
@@ -90,6 +96,7 @@ dependencies {
     implementation(libs.compose.material3)
     implementation(libs.lottie)
     implementation(libs.lottie.compose)
+    implementation(libs.ui.viewbinding)
     debugImplementation(libs.ui.tooling)
     implementation(libs.tooling.preview)
     implementation(libs.material.icons.extended)
