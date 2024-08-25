@@ -1,5 +1,7 @@
 package com.example.presentation.screens.homescreen
 
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Icon
@@ -53,46 +55,50 @@ fun HomeScreen(
 @Composable
 private fun ScreenContent(bottomBarNavController: NavHostController) {
     val screenRoutes = BottomRoute.all()
-    Scaffold(bottomBar = {
-        NavigationBar(containerColor = Palette.Yellow) {
-            val navBackStackEntry by bottomBarNavController.currentBackStackEntryAsState()
-            val currentDestination = navBackStackEntry?.destination
-            screenRoutes.forEach { screen ->
-                val isSelected =
-                    currentDestination?.hierarchy?.any { it.route == screen.route } == true
-                NavigationBarItem(
-                    modifier = Modifier.semantics { this.testTag = screen.route },
-                    colors = NavigationBarItemDefaults.colors(
-                        indicatorColor = Palette.Yellow
-                    ),
-                    icon = {
-                        val iconRes = if (isSelected) {
-                            screen.selectedIconRes
-                        } else {
-                            screen.unSelectedIconRes
-                        }
-                        Icon(
-                            modifier = Modifier.size(Dimens.BottomNavigationItemSize),
-                            painter = painterResource(iconRes),
-                            contentDescription = null,
-                            tint = Color.Unspecified
-                        )
-                    },
-                    label = { Text(text = screen.route, color = Palette.Peach) },
-                    selected = isSelected,
-                    onClick = {
-                        bottomBarNavController.navigate(screen.route) {
-                            popUpTo(bottomBarNavController.graph.findStartDestination().id) {
-                                saveState = true
+    Scaffold(
+        modifier = Modifier.imePadding(),
+        bottomBar = {
+            NavigationBar(containerColor = Palette.Yellow) {
+                val navBackStackEntry by bottomBarNavController.currentBackStackEntryAsState()
+                val currentDestination = navBackStackEntry?.destination
+                screenRoutes.forEach { screen ->
+                    val isSelected =
+                        currentDestination?.hierarchy?.any { it.route == screen.route } == true
+                    NavigationBarItem(
+                        modifier = Modifier.semantics { this.testTag = screen.route },
+                        colors = NavigationBarItemDefaults.colors(
+                            indicatorColor = Palette.Yellow
+                        ),
+                        icon = {
+                            val iconRes = if (isSelected) {
+                                screen.selectedIconRes
+                            } else {
+                                screen.unSelectedIconRes
                             }
-                            launchSingleTop = true
-                            restoreState = true
+                            Icon(
+                                modifier = Modifier.size(Dimens.BottomNavigationItemSize),
+                                painter = painterResource(iconRes),
+                                contentDescription = null,
+                                tint = Color.Unspecified
+                            )
+                        },
+                        label = { Text(text = screen.route, color = Palette.Peach) },
+                        selected = isSelected,
+                        onClick = {
+                            bottomBarNavController.navigate(screen.route) {
+                                popUpTo(bottomBarNavController.graph.findStartDestination().id) {
+                                    saveState = true
+                                }
+                                launchSingleTop = true
+                                restoreState = true
+                            }
                         }
-                    }
-                )
+                    )
+                }
             }
-        }
-    }) { innerPadding ->
+        },
+        contentWindowInsets = WindowInsets(0, 0, 0, 0)
+    ) { innerPadding ->
         NavHost(
             bottomBarNavController,
             startDestination = screenRoutes.first().route,

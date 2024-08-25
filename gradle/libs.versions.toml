@@ -27,7 +27,7 @@ detekt-compose-rules = "0.3.3"
 leakcanary-android = "2.14"
 timber = "5.0.1"
 
-firebase-bom = "33.1.2"
+firebase-bom = "33.2.0"
 play-services-ads = "23.2.0"
 google-services = "4.4.2"
 crashlytics = "3.0.2"
@@ -44,6 +44,7 @@ runner = "1.6.1"
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
 appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+firebase-auth = { group = "com.google.firebase", name = "firebase-auth" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "compose-bom" }
 compose-material3 = { group = "androidx.compose.material3", name = "material3" }

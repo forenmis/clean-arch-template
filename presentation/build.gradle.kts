@@ -112,6 +112,8 @@ dependencies {
 
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.messaging)
+    implementation(libs.firebase.auth)
+
     implementation(libs.accompanist.permissions)
 
     implementation(libs.play.services.ads)
