@@ -4,7 +4,10 @@ package com.example.presentation.screens.welcomescreen
 
 import android.app.Activity
 import androidx.lifecycle.viewModelScope
+import com.example.common.logger.Logger
 import com.example.presentation.core.BaseViewModel
+import com.example.presentation.utils.SmsHelper
+import com.google.android.gms.auth.api.phone.SmsRetriever
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthOptions
@@ -18,12 +21,20 @@ import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
 @HiltViewModel
-class WelcomeViewModel @Inject constructor() : BaseViewModel<
+class WelcomeViewModel @Inject constructor(private val logger: Logger) : BaseViewModel<
     WelcomeContracts.State,
     WelcomeContracts.Event,
     WelcomeContracts.Effect
     >(WelcomeContracts.State()) {
     private var verificationId: String? = null
+
+    init {
+        viewModelScope.launch {
+            SmsHelper.smsMessage.collect {
+                onEvent(WelcomeContracts.Event.OnVerifyCodeChanged(it))
+            }
+        }
+    }
 
     override fun onEvent(event: WelcomeContracts.Event) {
         super.onEvent(event)
@@ -53,9 +64,20 @@ class WelcomeViewModel @Inject constructor() : BaseViewModel<
     }
 
     private fun onVerifyClick(activity: Activity) {
+        val smsRetriever = SmsRetriever.getClient(activity)
+        val task = smsRetriever.startSmsRetriever()
+        task.addOnSuccessListener {
+            logger.w("smsRetriever", "OnSuccess")
+            // Successfully started retriever, expect broadcast intent
+        }
+        task.addOnFailureListener {
+            logger.w("smsRetriever", "OnFailure")
+            // Failed to start retriever, inspect Exception for more details
+        }
         val callbacks = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
             override fun onVerificationCompleted(p0: PhoneAuthCredential) {
                 signIn(p0)
+                setState { it.copy(verificationCodeSent = true) }
             }
 
             override fun onVerificationFailed(e: FirebaseException) {
@@ -68,6 +90,7 @@ class WelcomeViewModel @Inject constructor() : BaseViewModel<
             ) {
                 super.onCodeSent(verificationId, token)
                 this@WelcomeViewModel.verificationId = verificationId
+                setState { it.copy(verificationCodeSent = true) }
             }
         }
         val options = PhoneAuthOptions.newBuilder(Firebase.auth)
@@ -77,8 +100,6 @@ class WelcomeViewModel @Inject constructor() : BaseViewModel<
             .setCallbacks(callbacks) // OnVerificationStateChangedCallbacks
             .build()
         PhoneAuthProvider.verifyPhoneNumber(options)
-
-        setState { it.copy(verificationCodeSent = true) }
     }
 
     private fun verifyCode() {

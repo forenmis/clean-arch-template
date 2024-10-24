@@ -47,6 +47,7 @@ android {
         }
         release {
             isMinifyEnabled = false
+            isDebuggable = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -87,4 +88,8 @@ dependencies {
     implementation(libs.firebase.analytics)
 
     implementation(libs.play.services.ads)
+    implementation(libs.play.services.auth)
+    implementation(libs.play.services.auth.api.phone)
+    implementation(libs.integrity)
+    implementation(libs.browser)
 }
