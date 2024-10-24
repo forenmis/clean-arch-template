@@ -14,9 +14,9 @@ sealed class BottomRoute(
     data object Welcome : BottomRoute("welcome")
     data object Room : BottomRoute("room")
     data object Retrofit : BottomRoute("retrofit")
-    data object Lottie : BottomRoute("lottie")
+    data object Player : BottomRoute("player")
 
     companion object {
-        fun all(): List<BottomRoute> = listOf(Welcome, Room, Retrofit, Lottie)
+        fun all(): List<BottomRoute> = listOf(Welcome, Room, Retrofit, Player)
     }
 }

@@ -26,12 +26,17 @@ android {
     }
     buildTypes {
         debug {
+            manifestPlaceholders["crashlyticsCollectionEnabled"] = false
             buildConfigField(
                 "String",
                 "README",
                 "\"https://github.com/forenmis/clean-arch-template/blob/main/README.md\""
             )
-            manifestPlaceholders["crashlyticsCollectionEnabled"] = false
+            buildConfigField(
+                "String",
+                "EXAMPLE_VIDEO_URI",
+                "\"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4\""
+            )
         }
         release {
             buildConfigField(
@@ -39,11 +44,15 @@ android {
                 "README",
                 "\"https://github.com/forenmis/clean-arch-template/blob/main/README.md\""
             )
+            buildConfigField(
+                "String",
+                "EXAMPLE_VIDEO_URI",
+                "\"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4\""
+            )
             manifestPlaceholders["crashlyticsCollectionEnabled"] = true
         }
         create("qa") {
             initWith(getByName("debug"))
-            manifestPlaceholders["crashlyticsCollectionEnabled"] = true
         }
     }
 
@@ -92,24 +101,36 @@ dependencies {
     implementation(libs.material)
     implementation(libs.splashscreen)
 
-    implementation(platform(libs.compose.bom))
     implementation(libs.compose.material3)
     implementation(libs.lottie)
     implementation(libs.lottie.compose)
     implementation(libs.ui.viewbinding)
+    implementation(platform(libs.compose.bom))
     debugImplementation(libs.ui.tooling)
     implementation(libs.tooling.preview)
     implementation(libs.material.icons.extended)
+
     implementation(libs.activity.compose)
     implementation(libs.lifecycle.viewmodel.compose)
     implementation(libs.navigation.compose)
-    implementation(libs.hilt.navigation.compose)
+
     implementation(libs.lifecycle.runtime.compose)
     implementation(libs.coil.compose)
 
+    // lottie
+    implementation(libs.lottie)
+    implementation(libs.lottie.compose)
+
+    // DI
+    implementation(libs.hilt.navigation.compose)
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
 
+    // media player
+    implementation(libs.media3.ui)
+    implementation(libs.media3.exoplayer)
+
+    // detekt
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.messaging)
     implementation(libs.firebase.auth)

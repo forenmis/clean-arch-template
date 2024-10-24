@@ -28,8 +28,7 @@ class HomeScreenTest : DefaultTestRules() {
                 navigatorProvider.addNavigator(ComposeNavigator())
             }
             HomeScreen(
-                viewModel = viewModel,
-                navController = navController
+                viewModel = viewModel
             )
         }
     }
