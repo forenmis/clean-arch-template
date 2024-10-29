@@ -23,7 +23,6 @@ fun ExoPlayerView(exoPlayer: ExoPlayer, videoUri: String, modifier: Modifier = M
     val mediaItem = remember(videoUri) { MediaItem.fromUri(videoUri) }
     val context = LocalContext.current
 
-
     LaunchedEffect(mediaItem) {
         exoPlayer.setMediaItem(mediaItem)
         exoPlayer.prepare()
@@ -43,9 +42,13 @@ fun ExoPlayerView(exoPlayer: ExoPlayer, videoUri: String, modifier: Modifier = M
                 setFullscreenButtonClickListener { isFullScreen ->
                     with(context) {
                         if (isFullScreen) {
-                            setScreenOrientation(orientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE)
+                            setScreenOrientation(
+                                orientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
+                            )
                         } else {
-                            setScreenOrientation(orientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
+                            setScreenOrientation(
+                                orientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+                            )
                         }
                     }
                 }
@@ -88,4 +91,3 @@ private fun Context.showSystemUi() {
         window.decorView
     ).show(WindowInsetsCompat.Type.systemBars())
 }
-

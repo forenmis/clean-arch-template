@@ -36,7 +36,6 @@ private fun ScreenContent(
     state: RetrofitContracts.State,
     onEvent: (RetrofitContracts.Event) -> Unit,
 ) {
-
     LaunchedEffect(Unit) {
         if (state.isLoading) {
             onEvent(RetrofitContracts.Event.OnLoad)
