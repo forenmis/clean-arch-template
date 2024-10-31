@@ -28,7 +28,8 @@ class HomeScreenTest : DefaultTestRules() {
                 navigatorProvider.addNavigator(ComposeNavigator())
             }
             HomeScreen(
-                viewModel = viewModel
+                viewModel = viewModel,
+                onNavigateToPlayer = {}
             )
         }
     }

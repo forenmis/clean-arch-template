@@ -22,9 +22,9 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.example.presentation.screens.playerscreen.PlayerScreen
 import com.example.presentation.screens.retrofitscreen.RetrofitScreen
 import com.example.presentation.screens.roomscreen.RoomScreen
+import com.example.presentation.screens.selectvideoscreen.SelectVideoScreen
 import com.example.presentation.screens.welcomescreen.WelcomeScreen
 import com.example.presentation.utils.BottomRoute
 import com.example.presentation.utils.Dimens
@@ -32,14 +32,12 @@ import com.example.presentation.utils.Palette
 
 @SuppressWarnings("UnusedParameter")
 @Composable
-fun HomeScreen(viewModel: HomeViewModel) {
-    MaterialTheme {
-        ScreenContent()
-    }
+fun HomeScreen(viewModel: HomeViewModel, onNavigateToPlayer: (String) -> Unit) {
+    MaterialTheme { ScreenContent(onNavigateToPlayer = onNavigateToPlayer) }
 }
 
 @Composable
-private fun ScreenContent() {
+private fun ScreenContent(onNavigateToPlayer: (String) -> Unit) {
     val bottomBarNavController = rememberNavController()
     val screenRoutes = BottomRoute.all()
     Scaffold(bottomBar = {
@@ -86,7 +84,12 @@ private fun ScreenContent() {
             startDestination = screenRoutes.first().route,
             modifier = Modifier.padding(innerPadding)
         ) {
-            composable(BottomRoute.Player.route) { PlayerScreen(viewModel = hiltViewModel()) }
+            composable(BottomRoute.SelectVideo.route) {
+                SelectVideoScreen(
+                    viewModel = hiltViewModel(),
+                    onNavigateToPlayer = onNavigateToPlayer
+                )
+            }
             composable(BottomRoute.Welcome.route) { WelcomeScreen(viewModel = hiltViewModel()) }
             composable(BottomRoute.Retrofit.route) { RetrofitScreen(viewModel = hiltViewModel()) }
             composable(BottomRoute.Room.route) { RoomScreen(viewModel = hiltViewModel()) }
@@ -97,5 +100,5 @@ private fun ScreenContent() {
 @Preview(showBackground = true)
 @Composable
 private fun ScreenPreview() {
-    ScreenContent()
+    ScreenContent(onNavigateToPlayer = {})
 }

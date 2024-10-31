@@ -14,7 +14,9 @@ plugins {
     alias(libs.plugins.crashlytics) apply false
     alias(libs.plugins.room) apply false
     alias(libs.plugins.junit5) apply false
-
+    alias(libs.plugins.navigationSafeArgs) apply false
+    alias(libs.plugins.composeCompiler) apply false
+    alias(libs.plugins.kotlinSerialization) apply false
 }
 
 //ktlint

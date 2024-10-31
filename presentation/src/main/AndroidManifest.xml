@@ -9,6 +9,7 @@
             android:name=".main.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.CleanArchitectureTemplate.Starting"
+            android:configChanges="orientation|screenSize"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

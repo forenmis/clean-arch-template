@@ -1,15 +1,15 @@
 [versions]
-agp = "8.3.2"
-kotlin = "1.9.23"
-ksp = "1.9.23-1.0.20"
-core-ktx = "1.13.1"
+agp = "8.7.1"
+kotlin = "2.0.21"
+ksp = "2.0.21-1.0.26"
+core-ktx = "1.15.0"
 appcompat = "1.7.0"
 material = "1.12.0"
-compose-bom = "2024.10.00"
+compose-bom = "2024.10.01"
 nav-version = "2.8.3"
 lottie = "6.4.0"
 lottie-compose = "4.0.0"
-ui-viewbinding = "1.7.4"
+ui-viewbinding = "1.7.5"
 splashscreen = "1.2.0-alpha02"
 room = "2.6.1"
 
@@ -18,7 +18,7 @@ gson = "2.10.1"
 retrofit = "2.9.0"
 hilt = "2.51.1"
 hilt-navigation-compose = "1.2.0"
-lifecycle-runtime-compose = "2.7.0"
+lifecycle-runtime-compose = "2.8.7"
 coil-compose = "2.6.0"
 
 ktlint = "12.1.0"
@@ -28,7 +28,7 @@ leakcanary-android = "2.14"
 timber = "5.0.1"
 
 firebase-bom = "33.5.1"
-play-services-ads = "23.4.0"
+play-services-ads = "23.5.0"
 google-services = "4.4.2"
 crashlytics = "3.0.2"
 accompanist-permissions = "0.35.0-alpha"
@@ -41,7 +41,7 @@ mockito-core = "5.12.0"
 dexmaker-mockito-inline-extended = "2.28.3"
 runner = "1.6.2"
 media3-exoplayer = "1.4.1"
-
+serialization = "1.7.3"
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
@@ -107,6 +107,7 @@ mockito-kotlin = { group = "org.mockito.kotlin", name = "mockito-kotlin", versio
 mockito-core = { group = "org.mockito", name = "mockito-core", version.ref = "mockito-core" }
 dexmaker-mockito-inline-extended = { group = "com.linkedin.dexmaker", name = "dexmaker-mockito-inline-extended", version.ref = "dexmaker-mockito-inline-extended" }
 ui-viewbinding = { group = "androidx.compose.ui", name = "ui-viewbinding", version.ref = "ui-viewbinding" }
+kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "serialization"}
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
@@ -117,6 +118,9 @@ hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint" }
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 room = { id = "androidx.room", version.ref = "room" }
+navigationSafeArgs = { id = "androidx.navigation.safeargs.kotlin", version.ref = "nav-version"}
+kotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+composeCompiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 
 google-services = { id = "com.google.gms.google-services", version.ref = "google-services" }
 crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "crashlytics" }
