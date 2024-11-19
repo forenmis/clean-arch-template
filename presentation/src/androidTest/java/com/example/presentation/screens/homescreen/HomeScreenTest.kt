@@ -29,7 +29,7 @@ class HomeScreenTest : DefaultTestRules() {
             }
             HomeScreen(
                 viewModel = viewModel,
-                navController = navController
+                onNavigateToPlayer = {}
             )
         }
     }

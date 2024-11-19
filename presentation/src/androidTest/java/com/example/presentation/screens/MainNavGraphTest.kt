@@ -4,7 +4,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.compose.ComposeNavigator
 import androidx.navigation.testing.TestNavHostController
 import com.example.presentation.DefaultTestRules
-import com.example.presentation.utils.Routes
+import com.example.presentation.utils.Home
 import dagger.hilt.android.testing.HiltAndroidTest
 import org.junit.Assert.assertEquals
 import org.junit.Before
@@ -29,7 +29,7 @@ class MainNavGraphTest : DefaultTestRules() {
 
     @Test
     fun verifyStartDestination() {
-        val expected = Routes.HOME
+        val expected = Home
         val actual = navController.currentBackStackEntry?.destination?.route
         assertEquals(expected, actual)
     }

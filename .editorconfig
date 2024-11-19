@@ -7,6 +7,7 @@ ktlint_standard_function-naming = disabled
 # Imports renamed with "as" are ordered last by Android Studio
 ktlint_standard_import-ordering = disabled
 ktlint_standard_annotation = disabled
+ktlint_standard_max-line-length = disabled
 
 ij_kotlin_allow_trailing_comma = true
 ij_kotlin_allow_trailing_comma_on_call_site = false

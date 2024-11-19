@@ -13,6 +13,9 @@ plugins {
     alias(libs.plugins.ksp)
     alias(libs.plugins.hilt)
     alias(libs.plugins.detekt)
+    alias(libs.plugins.navigationSafeArgs)
+    alias(libs.plugins.composeCompiler)
+    alias(libs.plugins.kotlinSerialization)
 }
 
 android {
@@ -26,12 +29,72 @@ android {
     }
     buildTypes {
         debug {
+            manifestPlaceholders["crashlyticsCollectionEnabled"] = false
             buildConfigField(
                 "String",
                 "README",
                 "\"https://github.com/forenmis/clean-arch-template/blob/main/README.md\""
             )
-            manifestPlaceholders["crashlyticsCollectionEnabled"] = false
+
+            buildConfigField(
+                "String",
+                "EXAMPLE_VIDEO_URI",
+                "\"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4\""
+            )
+
+            buildConfigField(
+                "String",
+                "EXAMPLE_TEST_VIDEO_URI_1",
+                "\"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4\""
+            )
+
+            buildConfigField(
+                "String",
+                "EXAMPLE_TEST_VIDEO_URI_2",
+                "\"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4\""
+            )
+
+            buildConfigField(
+                "String",
+                "EXAMPLE_TEST_VIDEO_URI_3",
+                "\"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4\""
+            )
+
+            buildConfigField(
+                "String",
+                "EXAMPLE_TEST_VIDEO_URI_4",
+                "\"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4\""
+            )
+
+            buildConfigField(
+                "String",
+                "EXAMPLE_TEST_VIDEO_URI_5",
+                "\"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4\""
+            )
+
+            buildConfigField(
+                "String",
+                "EXAMPLE_TEST_VIDEO_URI_6",
+                "\"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4\""
+            )
+
+            buildConfigField(
+                "String",
+                "EXAMPLE_TEST_VIDEO_URI_8",
+                "\"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4\""
+            )
+
+            buildConfigField(
+                "String",
+                "EXAMPLE_TEST_VIDEO_URI_9",
+                "\"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4\""
+            )
+
+            buildConfigField(
+                "String",
+                "EXAMPLE_TEST_VIDEO_URI_10",
+                "\"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WhatCarCanYouGetForAGrand.mp4\""
+            )
         }
         release {
             buildConfigField(
@@ -39,11 +102,28 @@ android {
                 "README",
                 "\"https://github.com/forenmis/clean-arch-template/blob/main/README.md\""
             )
+            buildConfigField(
+                "String",
+                "EXAMPLE_TEST_VIDEO_URI_7",
+                "\"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4\""
+            )
+
+            buildConfigField(
+                "String",
+                "EXAMPLE_TEST_VIDEO_URI_5",
+                "\"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4\""
+            )
+
+            buildConfigField(
+                "String",
+                "EXAMPLE_TEST_VIDEO_URI_6",
+                "\"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4\""
+            )
+
             manifestPlaceholders["crashlyticsCollectionEnabled"] = true
         }
         create("qa") {
             initWith(getByName("debug"))
-            manifestPlaceholders["crashlyticsCollectionEnabled"] = true
         }
     }
 
@@ -92,24 +172,37 @@ dependencies {
     implementation(libs.material)
     implementation(libs.splashscreen)
 
-    implementation(platform(libs.compose.bom))
     implementation(libs.compose.material3)
     implementation(libs.lottie)
     implementation(libs.lottie.compose)
     implementation(libs.ui.viewbinding)
+    implementation(platform(libs.compose.bom))
     debugImplementation(libs.ui.tooling)
     implementation(libs.tooling.preview)
     implementation(libs.material.icons.extended)
+
     implementation(libs.activity.compose)
     implementation(libs.lifecycle.viewmodel.compose)
     implementation(libs.navigation.compose)
-    implementation(libs.hilt.navigation.compose)
+    implementation(libs.kotlinx.serialization.json)
+
     implementation(libs.lifecycle.runtime.compose)
     implementation(libs.coil.compose)
 
+    // lottie
+    implementation(libs.lottie)
+    implementation(libs.lottie.compose)
+
+    // DI
+    implementation(libs.hilt.navigation.compose)
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
 
+    // media player
+    implementation(libs.media3.ui)
+    implementation(libs.media3.exoplayer)
+
+    // detekt
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.messaging)
     implementation(libs.firebase.auth)
