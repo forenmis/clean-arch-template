@@ -66,16 +66,10 @@ private fun ScreenContent(
                             catUi = catUi,
                             isFavorite = catUi.isFavorite,
                             onAddToFavorite = {
-                                onEvent(
-                                    RetrofitContracts.Event.OnAddToFavorite(
-                                        it
-                                    )
-                                )
+                                onEvent(RetrofitContracts.Event.OnAddToFavorite(it))
                             },
                             onDeleteFromFavorite = {
-                                onEvent(
-                                    RetrofitContracts.Event.OnDeleteFromFavorite(it.id)
-                                )
+                                onEvent(RetrofitContracts.Event.OnDeleteFromFavorite(it.id))
                             }
                         )
                     }

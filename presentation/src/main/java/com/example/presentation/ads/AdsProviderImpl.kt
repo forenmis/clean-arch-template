@@ -13,10 +13,10 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class AdsHelper(private val context: Context, private val logger: Logger) {
+class AdsProviderImpl(private val context: Context, private val logger: Logger) : AdsProvider {
     private val backgroundScope = CoroutineScope(Dispatchers.IO)
 
-    fun initialize() {
+    override fun initialize() {
         backgroundScope.launch {
             MobileAds.initialize(context) { initializationStatus ->
                 initializationStatus.adapterStatusMap
@@ -33,7 +33,7 @@ class AdsHelper(private val context: Context, private val logger: Logger) {
         }
     }
 
-    fun interstitialAd(activity: Activity) {
+    override fun interstitialAd(activity: Activity) {
         val adRequest = AdRequest.Builder().build()
         InterstitialAd.load(
             activity,

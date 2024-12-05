@@ -8,6 +8,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
 import com.example.presentation.screens.homescreen.HomeScreen
 import com.example.presentation.screens.playerscreen.PlayerScreen
@@ -23,7 +24,7 @@ fun MainNavGraph(navController: NavHostController, modifier: Modifier = Modifier
     ) {
         composable<Home> {
             HomeScreen(
-                viewModel = hiltViewModel(),
+                bottomBarNavController = rememberNavController(),
                 onNavigateToPlayer = { uri ->
                     navController.navigate(Player(uri))
                 }

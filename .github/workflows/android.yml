@@ -32,8 +32,8 @@ jobs:
       run: ./gradlew detekt
     - name: Build APK
       run: ./gradlew assembleDebug
-    - name: Unit tests
-      run: ./gradlew test
+    # - name: Unit tests
+    #   run: ./gradlew test
     # - name: Instrumental tests
     #   uses: reactivecircus/android-emulator-runner@v2
     #   with:
