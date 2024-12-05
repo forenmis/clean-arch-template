@@ -37,7 +37,6 @@ import com.example.presentation.utils.Dimens
 import com.example.presentation.utils.TextSizes
 import com.example.presentation.utils.Weights
 
-@SuppressWarnings("UnusedParameter")
 @Composable
 fun WelcomeScreen(viewModel: WelcomeViewModel) {
     val state by viewModel.state.collectAsStateWithLifecycle()

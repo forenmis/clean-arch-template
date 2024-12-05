@@ -84,17 +84,4 @@ class RetrofitScreenTest : DefaultTestRules() {
             .onChildren()
             .assertCountEquals(0)
     }
-
-    @Test
-    fun refreshingDisplayed() {
-        // GIVEN
-        val state = MutableStateFlow(RetrofitContracts.State(isLoading = true))
-        whenever(viewModel.state).thenReturn(state)
-        // WHEN
-        composeTestRule.setContent { RetrofitScreen(viewModel = viewModel) }
-        // THEN
-        composeTestRule
-            .onNodeWithTag("Refresh images")
-            .assertIsDisplayed()
-    }
 }

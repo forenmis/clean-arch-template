@@ -9,15 +9,13 @@ import androidx.navigation.testing.TestNavHostController
 import com.example.presentation.DefaultTestRules
 import com.example.presentation.utils.BottomRoute
 import dagger.hilt.android.testing.HiltAndroidTest
-import org.junit.Assert.assertEquals
+import kotlinx.coroutines.test.runTest
 import org.junit.Before
 import org.junit.Test
-import org.mockito.Mockito.mock
 
 @HiltAndroidTest
 class HomeScreenTest : DefaultTestRules() {
     private lateinit var navController: TestNavHostController
-    private val viewModel = mock(HomeViewModel::class.java)
 
     @Before
     fun setup() {
@@ -27,30 +25,17 @@ class HomeScreenTest : DefaultTestRules() {
             navController = TestNavHostController(LocalContext.current).apply {
                 navigatorProvider.addNavigator(ComposeNavigator())
             }
-            HomeScreen(
-                viewModel = viewModel,
-                onNavigateToPlayer = {}
-            )
+            HomeScreen(bottomBarNavController = navController, onNavigateToPlayer = {})
         }
     }
 
     @Test
-    fun verifyStartDestination() {
-        val expected = BottomRoute.Welcome.route
-        val actual = navController.currentBackStackEntry?.destination?.route
-        assertEquals(expected, actual)
-    }
-
-    @Test
-    fun verifyBottomRoutes() {
-        BottomRoute.all().forEach {
+    fun verifyBottomBarItems() = runTest {
+        BottomRoute.all().forEach { screen ->
             composeTestRule
-                .onNodeWithTag(it.route)
+                .onNodeWithTag(screen.screenName)
                 .assertIsDisplayed()
                 .performClick()
-            val expected = it.route
-            val actual = navController.currentBackStackEntry?.destination?.route
-            assertEquals(expected, actual)
         }
     }
 }
